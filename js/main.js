@@ -44,6 +44,8 @@
       'screens.card2.text': 'Смотрите, сколько слов вы повторили и выучили за день и за последние недели.',
       'screens.card3.title': 'Отдельные наборы ошибок и избранного',
       'screens.card3.text': 'Можно отдельно повторять сложные слова или держать компактный набор избранного под быстрый прогон.',
+      'screens.errors.label': 'Мои ошибки',
+      'screens.fav.label': 'Избранное',
 
       'faq.title': 'FAQ',
       'faq.q1.title': 'Нужно ли что-то устанавливать?',
@@ -96,6 +98,8 @@
       'screens.card2.text': 'Дивіться, скільки слів ви повторили та вивчили за день і за останні тижні.',
       'screens.card3.title': 'Окремі набори помилок та обраного',
       'screens.card3.text': 'Можна окремо проганяти складні слова або тримати компактний набір улюблених слів.',
+      'screens.errors.label': 'Мої помилки',
+      'screens.fav.label': 'Обране',
 
       'faq.title': 'FAQ',
       'faq.q1.title': 'Чи потрібно щось встановлювати?',
@@ -208,49 +212,52 @@
   }
 
   // Simple slider for themes
-  const slider = document.querySelector('.screen-slider');
-  if (slider) {
-    const slides = slider.querySelectorAll('.screen-slide');
-    const dots = slider.querySelectorAll('.screen-dot');
-    let current = 0;
+  const sliders = document.querySelectorAll('.screen-slider');
+  if (sliders.length) {
+    sliders.forEach((slider) => {
+      const slides = slider.querySelectorAll('.screen-slide');
+      const dots = slider.querySelectorAll('.screen-dot');
+      if (!slides.length || !dots.length) return;
+      let current = 0;
 
-    function setSlide(index) {
-      if (index < 0) index = slides.length - 1;
-      if (index >= slides.length) index = 0;
-      current = index;
-      slides.forEach((s, i) => {
-        s.classList.toggle('is-active', i === current);
-      });
-      dots.forEach((d, i) => {
-        d.classList.toggle('is-active', i === current);
-      });
-    }
-
-    dots.forEach((dot, idx) => {
-      dot.addEventListener('click', () => setSlide(idx));
-    });
-
-    let startX = null;
-
-    slider.addEventListener('touchstart', (e) => {
-      if (e.touches.length === 1) {
-        startX = e.touches[0].clientX;
+      function setSlide(index) {
+        if (index < 0) index = slides.length - 1;
+        if (index >= slides.length) index = 0;
+        current = index;
+        slides.forEach((s, i) => {
+          s.classList.toggle('is-active', i === current);
+        });
+        dots.forEach((d, i) => {
+          d.classList.toggle('is-active', i === current);
+        });
       }
-    });
 
-    slider.addEventListener('touchend', (e) => {
-      if (startX === null) return;
-      const endX = e.changedTouches[0].clientX;
-      const deltaX = endX - startX;
-      const threshold = 40;
-      if (Math.abs(deltaX) > threshold) {
-        if (deltaX < 0) {
-          setSlide(current + 1);
-        } else {
-          setSlide(current - 1);
+      dots.forEach((dot, idx) => {
+        dot.addEventListener('click', () => setSlide(idx));
+      });
+
+      let startX = null;
+
+      slider.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 1) {
+          startX = e.touches[0].clientX;
         }
-      }
-      startX = null;
+      });
+
+      slider.addEventListener('touchend', (e) => {
+        if (startX === null) return;
+        const endX = e.changedTouches[0].clientX;
+        const deltaX = endX - startX;
+        const threshold = 40;
+        if (Math.abs(deltaX) > threshold) {
+          if (deltaX < 0) {
+            setSlide(current + 1);
+          } else {
+            setSlide(current - 1);
+          }
+        }
+        startX = null;
+      });
     });
   }
 })();
