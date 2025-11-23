@@ -303,6 +303,23 @@ body {
 }
 /* HERO */
 
+
+.hero-lang-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(8, 10, 30, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.hero-lang-flag {
+  font-size: 14px;
+}
 .hero {
   padding: 64px 0 48px;
 }
@@ -315,6 +332,17 @@ body {
   font-size: clamp(28px, 3.1vw, 36px);
   line-height: 1.1;
   margin: 0;
+}
+
+@media (min-width: 900px) {
+  .hero-title {
+    text-align: center;
+  }
+
+  .hero-title h1 {
+    margin-inline: auto;
+    max-width: 760px;
+  }
 }
 
 
