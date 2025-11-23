@@ -680,37 +680,28 @@ body {
 
 
 /* Support & share section */
-#support .container {
-  text-align: center;
-}
-
 #support .support-actions {
   display: flex;
   justify-content: center;
-  margin-top: 24px;
-  margin-bottom: 12px;
+  margin: 24px 0 12px;
 }
 
 #support .share-block {
   margin-top: 16px;
 }
 
-#support .share-block p {
-  margin-bottom: 6px;
-}
-
 #support .share-buttons {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 14px;
 }
 
 #support .share-buttons a {
-  color: var(--accent2);
-  text-decoration: none;
+  color: var(--accent);
+  opacity: 0.9;
 }
 
 #support .share-buttons a:hover {
-  text-decoration: underline;
+  opacity: 1;
 }
