@@ -349,9 +349,8 @@ body {
 
 .hero-ctas {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 12px;
   margin-bottom: 10px;
 }
 
@@ -360,7 +359,6 @@ body {
   font-size: 13px;
   color: var(--text-muted);
 }
-
 
 /* Hero screenshot */
 
@@ -677,75 +675,5 @@ body {
 @media (max-width: 1200px) {
   .btn-support-header {
     display: none !important;
-  }
-}
-
-
-/* Support & share section */
-#support .container {
-  text-align: center;
-}
-
-#support .support-actions {
-  display: flex;
-  justify-content: center;
-  margin-top: 24px;
-  margin-bottom: 12px;
-}
-
-#support .share-block {
-  margin-top: 16px;
-  text-align: center;
-}
-
-#support .share-block p {
-  margin-bottom: 6px;
-}
-
-#support .share-buttons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 14px;
-}
-
-#support .share-buttons a {
-  color: var(--text);
-  opacity: 0.9;
-  text-decoration: none;
-}
-
-#support .share-buttons a:hover {
-  opacity: 1;
-  text-decoration: underline;
-}
-
-#support .share-buttons a:hover {
-  text-decoration: underline;
-}
-
-
-@media (max-width: 768px) {
-  .burger {
-    display: none !important;
-  }
-}
-
-
-@media (max-width: 720px) {
-  .footer-inner {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 8px;
-  }
-
-  .footer-left {
-    justify-content: center;
-  }
-
-  .footer-links {
-    justify-content: center;
-    text-align: center;
   }
 }
