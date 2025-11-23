@@ -677,3 +677,40 @@ body {
     display: none !important;
   }
 }
+
+
+/* Support & share section */
+#support .container {
+  text-align: center;
+}
+
+#support .support-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+#support .share-block {
+  margin-top: 16px;
+}
+
+#support .share-block p {
+  margin-bottom: 6px;
+}
+
+#support .share-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+#support .share-buttons a {
+  color: var(--accent2);
+  text-decoration: none;
+}
+
+#support .share-buttons a:hover {
+  text-decoration: underline;
+}
