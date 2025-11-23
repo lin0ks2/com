@@ -1,27 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>moyamova — Learn words easily with us</title>
+  <title data-i18n="meta.title">moyamova — Личный тренажёр слов в вашем браузере</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
-        content="moyamova is a simple word trainer in your browser. Learn foreign words with smart repetitions, track your progress, and keep everything right on your phone." />
-
+        content="moyamova — это простой тренажёр слов на карточках, который работает прямо в браузере. Умные повторы, статистика и прогресс, который всегда с вами." />
   <link rel="canonical" href="https://moyamova.com/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="moyamova — Learn words easily with us" />
+  <meta property="og:title" content="moyamova — Личный тренажёр слов" />
   <meta property="og:description"
-        content="Word trainer on cards that lives in your browser. No installation, remembers your progress, works offline." />
+        content="Карточки со словами, умные повторы и прогресс, который живёт в вашем телефоне." />
   <meta property="og:url" content="https://moyamova.com/" />
   <meta property="og:image" content="https://moyamova.com/img/og-cover.png" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="moyamova — Learn words easily with us" />
+  <meta name="twitter:title" content="moyamova — Личный тренажёр слов" />
   <meta name="twitter:description"
-        content="Learn foreign words with a clean card trainer that works right in your browser." />
+        content="Учите иностранные слова в чистом и понятном тренажёре на карточках." />
   <meta name="twitter:image" content="https://moyamova.com/img/og-cover.png" />
 
   <link rel="icon" href="/favicon.jpeg">
@@ -37,13 +36,18 @@
       </a>
 
       <nav class="nav">
-        <a href="#how" class="nav-link">How it works</a>
-        <a href="#who" class="nav-link">Who it's for</a>
-        <a href="#screens" class="nav-link">Interface</a>
-        <a href="#faq" class="nav-link">FAQ</a>
+        <a href="#how" class="nav-link" data-i18n="nav.how">Как работает</a>
+        <a href="#who" class="nav-link" data-i18n="nav.who">Кому подойдёт</a>
+        <a href="#screens" class="nav-link" data-i18n="nav.screens">Интерфейс</a>
+        <a href="#faq" class="nav-link" data-i18n="nav.faq">FAQ</a>
       </nav>
 
-      <button class="burger" aria-label="Open menu">
+      <div class="lang-switch" aria-label="Language switcher">
+        <button class="lang-btn is-active" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="uk">UA</button>
+      </div>
+
+      <button class="burger" aria-label="Открыть меню">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -54,25 +58,26 @@
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-content">
-          <h1>Learn words easily with us</h1>
-          <p class="hero-subtitle">
-            moyamova is a focused word trainer that lives right in your browser.
-            Clean interface, smart repetitions, and your progress saved on the device.
+          <h1 data-i18n="hero.title">Личный тренажёр слов, который живёт в вашем телефоне</h1>
+          <p class="hero-subtitle" data-i18n="hero.subtitle">
+            moyamova — это тренажёр на карточках прямо в браузере.
+            Без установки, с умными повторами и прогрессом, который не теряется.
           </p>
 
           <div class="hero-ctas">
             <a href="https://moyamova.online/"
                class="btn btn-primary"
-               data-role="start-trainer">
-              Start the trainer
+               data-role="start-trainer"
+               data-i18n="hero.ctaPrimary">
+              Запустить тренажёр
             </a>
-            <button class="btn btn-ghost" data-role="how-it-works">
-              How it works
+            <button class="btn btn-ghost" data-role="how-it-works" data-i18n="hero.ctaSecondary">
+              Как это работает
             </button>
           </div>
 
-          <p class="hero-note">
-            Opens as a web app. On your phone, just add it to the home screen.
+          <p class="hero-note" data-i18n="hero.note">
+            Тренажёр откроется как веб-приложение. На телефоне его можно добавить на главный экран.
           </p>
         </div>
 
@@ -80,7 +85,7 @@
           <div class="phone-mock">
             <div class="phone-notch"></div>
             <div class="phone-screen">
-              <img src="./img/screen-main.jpg" alt="moyamova trainer screenshot" class="screen-img" />
+              <img src="./img/screen-main.jpg" alt="Скриншот тренажёра moyamova" class="screen-img" />
             </div>
           </div>
         </div>
@@ -90,26 +95,24 @@
     <!-- HOW IT WORKS -->
     <section id="how" class="section">
       <div class="container">
-        <h2>How it works</h2>
+        <h2 data-i18n="how.title">Как это работает</h2>
         <div class="grid-3">
           <div class="feature-card">
-            <h3>1. Pick a language</h3>
-            <p>
-              Open the trainer on moyamova.online and choose your language and word set.
+            <h3 data-i18n="how.step1.title">1. Выбираете язык и набор слов</h3>
+            <p data-i18n="how.step1.text">
+              Откройте тренажёр на moyamova.online, выберите язык и колоду. Система сама подберёт первую порцию слов.
             </p>
           </div>
           <div class="feature-card">
-            <h3>2. Train with cards</h3>
-            <p>
-              You see a word and recall the translation. The system repeats hard words more often
-              and tracks your mistakes.
+            <h3 data-i18n="how.step2.title">2. Отвечаете на карточки</h3>
+            <p data-i18n="how.step2.text">
+              На экране слово — вы вспоминаете перевод. Сложные слова попадаются чаще, а ошибки собираются в отдельный список.
             </p>
           </div>
           <div class="feature-card">
-            <h3>3. Progress builds automatically</h3>
-            <p>
-              The trainer remembers what you already know. Statistics and mistakes are available
-              right inside the app.
+            <h3 data-i18n="how.step3.title">3. Прогресс копится сам</h3>
+            <p data-i18n="how.step3.text">
+              Тренажёр помнит, что вы уже выучили. Статистика и ошибки доступны в любой момент внутри приложения.
             </p>
           </div>
         </div>
@@ -119,25 +122,24 @@
     <!-- WHO IS IT FOR -->
     <section id="who" class="section section-alt">
       <div class="container">
-        <h2>Who it's for</h2>
+        <h2 data-i18n="who.title">Кому подойдёт moyamova</h2>
         <div class="grid-3">
           <div class="feature-card">
-            <h3>Active learners</h3>
-            <p>
-              If you already study with a teacher or on a course, moyamova helps to keep vocabulary
-              fresh between lessons.
+            <h3 data-i18n="who.card1.title">Тем, кто уже учит язык</h3>
+            <p data-i18n="who.card1.text">
+              Если вы занимаетесь с преподавателем или на курсах, тренажёр помогает держать лексику в тонусе между занятиями.
             </p>
           </div>
           <div class="feature-card">
-            <h3>People tired of heavy apps</h3>
-            <p>
-              No noise, no distractions. Just cards, repetitions, and clear stats for your words.
+            <h3 data-i18n="who.card2.title">Тем, кто устал от “комбайнов”</h3>
+            <p data-i18n="who.card2.text">
+              Никаких лишних разделов и ленты достижений. Только слова, повторения и понятный прогресс.
             </p>
           </div>
           <div class="feature-card">
-            <h3>Fans of simple tools</h3>
-            <p>
-              Works in the browser, no installation needed. Just open the link and start training.
+            <h3 data-i18n="who.card3.title">Тем, кто любит простые инструменты</h3>
+            <p data-i18n="who.card3.text">
+              Тренажёр работает в браузере. Откройте ссылку, добавьте на главный экран — и он всегда под рукой.
             </p>
           </div>
         </div>
@@ -147,29 +149,35 @@
     <!-- SCREENS -->
     <section id="screens" class="section">
       <div class="container">
-        <h2>Interface</h2>
-        <p class="section-lead">
-          The trainer is designed primarily for mobile. One screen — one card — one decision.
+        <h2 data-i18n="screens.title">Интерфейс</h2>
+        <p class="section-lead" data-i18n="screens.lead">
+          moyamova проектирован в первую очередь как мобильный тренажёр. Один экран — одна карточка — одно решение.
         </p>
 
         <div class="screens-grid">
           <div class="screen-item">
             <div class="screen-placeholder">
-              <img src="./img/screen-main.jpg" alt="Training screen" class="screen-thumb" />
+              <img src="./img/screen-main.jpg" alt="Экран тренировки" class="screen-thumb" />
             </div>
-            <p>Training screen with clear options and big tap targets.</p>
+            <p data-i18n="screens.card1.text">
+              Экран тренировки с понятными вариантами и крупными кнопками под палец.
+            </p>
           </div>
           <div class="screen-item">
             <div class="screen-placeholder text-only">
-              Stats inside the trainer
+              <span data-i18n="screens.card2.title">Статистика внутри тренажёра</span>
             </div>
-            <p>See how many words you reviewed and learned over days.</p>
+            <p data-i18n="screens.card2.text">
+              Смотрите, сколько слов вы повторили и выучили за день и за последние недели.
+            </p>
           </div>
           <div class="screen-item">
             <div class="screen-placeholder text-only">
-              Favorites & mistakes sets
+              <span data-i18n="screens.card3.title">Отдельные наборы ошибок и избранного</span>
             </div>
-            <p>Repeat tricky words separately, or keep a small personal set of favorites.</p>
+            <p data-i18n="screens.card3.text">
+              Можно отдельно повторять сложные слова или держать компактный набор избранного под быстрый прогон.
+            </p>
           </div>
         </div>
       </div>
@@ -178,37 +186,33 @@
     <!-- FAQ -->
     <section id="faq" class="section section-alt">
       <div class="container">
-        <h2>FAQ</h2>
+        <h2 data-i18n="faq.title">FAQ</h2>
 
         <details class="faq-item" open>
-          <summary>Do I need to install anything?</summary>
-          <p>
-            No. moyamova runs directly in your browser. On mobile you can add it to the home
-            screen so it behaves like a regular app.
+          <summary data-i18n="faq.q1.title">Нужно ли что-то устанавливать?</summary>
+          <p data-i18n="faq.q1.text">
+            Нет. moyamova работает прямо в браузере. На телефоне вы можете добавить тренажёр на главный экран — он будет вести себя как обычное приложение.
           </p>
         </details>
 
         <details class="faq-item">
-          <summary>Does it work offline?</summary>
-          <p>
-            Yes. After the first load the main files are cached. The trainer can work without
-            a constant internet connection.
+          <summary data-i18n="faq.q2.title">Работает ли тренажёр офлайн?</summary>
+          <p data-i18n="faq.q2.text">
+            Да. После первого открытия основные файлы кэшируются. Тренажёр может работать без постоянного подключения к интернету.
           </p>
         </details>
 
         <details class="faq-item">
-          <summary>Where is my progress stored?</summary>
-          <p>
-            Your progress lives in your browser on this device. If you clear browser data or
-            switch devices, the trainer starts fresh.
+          <summary data-i18n="faq.q3.title">Где хранится мой прогресс?</summary>
+          <p data-i18n="faq.q3.text">
+            Прогресс хранится в вашем браузере на этом устройстве. Если очистить данные браузера или сменить устройство, тренажёр начнёт с нуля.
           </p>
         </details>
 
         <details class="faq-item">
-          <summary>Which languages are available?</summary>
-          <p>
-            The list of languages and decks evolves. You will always see the current options
-            directly inside the trainer.
+          <summary data-i18n="faq.q4.title">Какие языки поддерживаются?</summary>
+          <p data-i18n="faq.q4.text">
+            Список языков и наборов слов развивается. Актуальные варианты вы всегда увидите внутри тренажёра.
           </p>
         </details>
       </div>
@@ -221,14 +225,16 @@
         <span class="footer-logo">
           <img src="./img/logo-icon.png" alt="moyamova logo small" />
         </span>
-        <span class="footer-copy">© <span id="year"></span> moyamova</span>
+        <span class="footer-copy">
+          © <span id="year"></span> moyamova
+        </span>
       </div>
       <div class="footer-links">
-        <a href="https://moyamova.online/legal/privacy.en.html" target="_blank" rel="noopener">
-          Privacy policy
+        <a href="https://moyamova.online/legal/privacy.ru.html" target="_blank" rel="noopener" data-i18n="footer.privacy">
+          Политика конфиденциальности
         </a>
-        <a href="https://moyamova.online/legal/terms.en.html" target="_blank" rel="noopener">
-          Terms of use
+        <a href="https://moyamova.online/legal/terms.ru.html" target="_blank" rel="noopener" data-i18n="footer.terms">
+          Условия использования
         </a>
       </div>
     </div>
