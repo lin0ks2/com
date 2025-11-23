@@ -1,3 +1,4 @@
+/* Base layout and theme */
 :root {
   --bg: #070816;
   --bg-alt: #0e1022;
@@ -258,6 +259,30 @@ body {
   color: var(--text-muted);
 }
 
+/* Hero screenshot */
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-shot {
+  max-width: 260px;
+  width: 100%;
+  border-radius: 30px;
+  padding: 8px;
+  background: radial-gradient(circle at top, #272b4b 0, #08091a 70%);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero-screen-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 22px;
+}
+
 /* Buttons */
 
 .btn {
@@ -295,49 +320,6 @@ body {
 
 .btn-ghost:hover {
   background: rgba(255, 255, 255, 0.05);
-}
-
-/* Phone mock */
-
-.hero-visual {
-  display: flex;
-  justify-content: center;
-}
-
-.phone-mock {
-  width: 260px;
-  border-radius: 40px;
-  padding: 10px;
-  background: radial-gradient(circle at top, #272b4b 0, #08091a 70%);
-  box-shadow: var(--shadow-soft);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  position: relative;
-}
-
-.phone-notch {
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 96px;
-  height: 16px;
-  border-radius: 999px;
-  background: rgba(0, 0, 0, 0.65);
-  z-index: 2;
-}
-
-.phone-screen {
-  border-radius: 32px;
-  background: #ffffff;
-  padding: 0;
-  overflow: hidden;
-  margin-top: 6px;
-}
-
-.screen-img {
-  display: block;
-  width: 100%;
-  height: auto;
 }
 
 /* Feature cards */
@@ -392,12 +374,64 @@ body {
   min-height: 96px;
 }
 
-.screen-thumb {
+/* Slider for themes */
+
+.screen-slider {
+  position: relative;
+  max-width: 260px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.screen-slide {
+  display: none;
+}
+
+.screen-slide.is-active {
+  display: block;
+}
+
+.screen-slide-img {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 10px;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+  border-radius: 22px;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.7);
+}
+
+.screen-badge {
+  display: inline-flex;
+  margin-top: 10px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  background: rgba(5, 8, 22, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: var(--text-muted);
+}
+
+.screen-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.screen-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  border: none;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.28);
+  cursor: pointer;
+}
+
+.screen-dot.is-active {
+  width: 18px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
 }
 
 /* FAQ */
@@ -470,7 +504,7 @@ body {
   text-decoration: underline;
 }
 
-/* Responsive */
+/* Responsive tweaks */
 
 @media (max-width: 900px) {
   .hero-inner {
@@ -484,9 +518,11 @@ body {
   .hero-visual {
     order: -1;
   }
+}
 
-  .phone-mock {
-    width: 230px;
+@media (max-width: 768px) {
+  .screens-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -494,10 +530,6 @@ body {
   .hero-ctas {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .screens-grid {
-    grid-template-columns: 1fr;
   }
 
   .footer-inner {
