@@ -672,8 +672,8 @@ body {
 }
 
 .screen-slider-small { max-width: 240px; }
-@media (max-width: 960px) {
+@media (max-width: 1200px) {
   .btn-support-header {
-    display: none;
+    display: none !important;
   }
 }
