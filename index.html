@@ -194,9 +194,21 @@
           </div>
 
           <div class="screen-item">
-            <div class="screen-placeholder screen-dual-small">
-              <img src="./img/screen-errors-ru.jpg" alt="Список ошибок по частям речи" class="screen-mini-img" />
-              <img src="./img/screen-favorites-ru.jpg" alt="Список избранных слов по частям речи" class="screen-mini-img" />
+            <div class="screen-placeholder">
+              <div class="screen-slider screen-slider-small" data-slider="sets">
+                <div class="screen-slide is-active" data-index="0">
+                  <img src="./img/screen-errors-ru.jpg" alt="Список ошибок по частям речи" class="screen-slide-img" />
+                  <span class="screen-badge" data-i18n="screens.errors.label">Мои ошибки</span>
+                </div>
+                <div class="screen-slide" data-index="1">
+                  <img src="./img/screen-favorites-ru.jpg" alt="Список избранных слов по частям речи" class="screen-slide-img" />
+                  <span class="screen-badge" data-i18n="screens.fav.label">Избранное</span>
+                </div>
+                <div class="screen-dots">
+                  <button class="screen-dot is-active" data-index="0" aria-label="Мои ошибки"></button>
+                  <button class="screen-dot" data-index="1" aria-label="Избранное"></button>
+                </div>
+              </div>
             </div>
             <p data-i18n="screens.card3.text">
               Можно отдельно повторять сложные слова или держать компактный набор избранного под быстрый прогон.
