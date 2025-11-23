@@ -327,7 +327,7 @@ a:hover {
 }
 
 .hero-lang-flag {
-  font-size: 14px;
+  font-size: 26px;
 }
 .hero {
   padding: 64px 0 48px;
@@ -335,6 +335,7 @@ a:hover {
 
 .hero-title {
   margin-bottom: 18px;
+  text-align: center;
 }
 
 .hero-title h1 {
