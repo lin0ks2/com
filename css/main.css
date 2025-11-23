@@ -38,6 +38,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+
+.brand-word {
+  font-weight: 700;
+  color: var(--accent);
+}
+
 /* Layout */
 
 .container {
