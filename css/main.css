@@ -317,6 +317,17 @@ body {
   padding: 64px 0 48px;
 }
 
+.hero-title {
+  margin-bottom: 18px;
+}
+
+.hero-title h1 {
+  font-size: clamp(28px, 3.1vw, 36px);
+  line-height: 1.1;
+  margin: 0;
+}
+
+
 .hero-inner {
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
@@ -661,10 +672,3 @@ body {
 }
 
 .screen-slider-small { max-width: 240px; }
-
-@media (max-width: 960px) {
-  .btn-support-header {
-    display: none;
-  }
-}
-  
