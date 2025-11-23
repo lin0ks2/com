@@ -377,6 +377,8 @@ body {
 /* Slider for themes */
 
 .screen-slider {
+  max-width: 260px;
+
   position: relative;
   max-width: 260px;
   margin: 0 auto;
@@ -561,3 +563,5 @@ body {
     align-items: flex-start;
   }
 }
+
+.screen-slider-small { max-width: 240px; }
