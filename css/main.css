@@ -504,6 +504,30 @@ body {
   text-decoration: underline;
 }
 
+
+.screen-dual-small {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px;
+}
+
+.screen-mini-img {
+  width: 50%;
+  border-radius: 16px;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.7);
+}
+
+/* On very narrow screens stack vertically */
+@media (max-width: 520px) {
+  .screen-dual-small {
+    flex-direction: column;
+  }
+  .screen-mini-img {
+    width: 100%;
+  }
+}
 /* Responsive tweaks */
 
 @media (max-width: 900px) {
