@@ -349,8 +349,9 @@ body {
 
 .hero-ctas {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
   margin-bottom: 10px;
 }
 
@@ -359,6 +360,7 @@ body {
   font-size: 13px;
   color: var(--text-muted);
 }
+
 
 /* Hero screenshot */
 
@@ -720,6 +722,13 @@ body {
 
 #support .share-buttons a:hover {
   text-decoration: underline;
+}
+
+
+@media (max-width: 768px) {
+  .burger {
+    display: none !important;
+  }
 }
 
 
