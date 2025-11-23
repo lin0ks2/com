@@ -201,21 +201,34 @@
             </p>
           </div>
 
-         <!-- <div class="screen-item">
+          <div class="screen-item">
             <div class="screen-placeholder text-only">
               <span data-i18n="screens.card2.title">Статистика внутри тренажёра</span>
             </div>
             <p data-i18n="screens.card2.text">
               Смотрите, сколько слов вы повторили и выучили за день и за последние недели.
             </p>
-          </div> -->
+          </div>
 
           <div class="screen-item">
             <div class="screen-placeholder">
-              <img src="./img/screen-dicts-ru.jpg" alt="Списки словарей по частям речи" class="screen-mini-img" />
+              <div class="screen-slider screen-slider-small" data-slider="features">
+                <div class="screen-slide is-active" data-index="0">
+                  <img src="./img/screen-dicts-ru.jpg" alt="Списки словарей по частям речи" class="screen-slide-img" />
+                  <span class="screen-badge" data-i18n="screens.features.dicts.label">Словари</span>
+                </div>
+                <div class="screen-slide" data-index="1">
+                  <img src="./img/screen-examples-ru.jpg" alt="Примеры предложений и озвучка слова" class="screen-slide-img" />
+                  <span class="screen-badge" data-i18n="screens.features.examples.label">Примеры и озвучка</span>
+                </div>
+                <div class="screen-dots">
+                  <button class="screen-dot is-active" data-index="0" aria-label="Словари"></button>
+                  <button class="screen-dot" data-index="1" aria-label="Примеры и озвучка"></button>
+                </div>
+              </div>
             </div>
             <p data-i18n="screens.card4.text">
-              Удобно выбирайте нужные наборы слов — по частям речи, темам и уровню.
+              Дополнительные функции MOYAMOVA: отдельные словари, живые примеры к словам, озвучка и другие опции для удобных тренировок.
             </p>
           </div>
           <div class="screen-item">
