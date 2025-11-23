@@ -741,3 +741,13 @@ body {
     display: none !important;
   }
 }
+
+a {
+  color: var(--accent2);
+}
+
+a:hover {
+  color: var(--accent2);
+  text-decoration: underline;
+}
+  
