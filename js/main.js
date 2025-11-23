@@ -64,6 +64,25 @@
       'faq.q3.text': 'Прогресс хранится в вашем браузере на этом устройстве. Если очистить данные браузера или сменить устройство, тренажёр начнёт с нуля.',
       'faq.q4.title': 'Какие языки поддерживаются?',
       'faq.q4.text': 'Сейчас доступен немецкий язык. Мы работаем над расширением списка языков и наборов слов.',
+      'faq.q5.title': 'Можно ли сохранить прогресс на будущее?',
+      'faq.q5.text': 'Сейчас прогресс хранится локально в вашем браузере на этом устройстве. Мы работаем над тем, чтобы добавить безопасную синхронизацию и восстановление при смене устройства.',
+      'faq.q6.title': 'Перенесётся ли прогресс на другой телефон или компьютер?',
+      'faq.q6.text': 'По умолчанию нет: если вы зайдёте с другого устройства или очистите данные браузера, тренажёр начнёт заново. Мы рассматриваем варианты переноса прогресса через аккаунт или код-перенос.',
+      'faq.q7.title': 'Что насчёт конфиденциальности и данных?',
+      'faq.q7.text': 'Мы не храним ваши слова и прогресс на сервере. Все данные остаются в вашем браузере. Аналитику мы собираем только в обезличенном виде, чтобы понимать, как улучшать MOYAMOVA.',
+      'reviews.title': 'Отзывы пользователей',
+      'reviews.r1.text': 'Лучший тренажёр слов, который всегда под рукой. 5 минут в день — и уже чувствуешь прогресс.',
+      'reviews.r1.author': 'Анна, учит немецкий',
+      'reviews.r2.text': 'Нравится, что нет лишнего — только карточки, примеры и практика.',
+      'reviews.r2.author': 'Максим, B1',
+      'reviews.r3.text': 'Использую со студентами в языковой школе — удобно и понятно.',
+      'reviews.r3.author': 'Оксана, преподаватель',
+      'support.title': 'Поддержка и сотрудничество',
+      'support.text': 'Если вам нравится MOYAMOVA — вы можете поддержать развитие проекта или предложить совместную работу.',
+      'support.donate': 'Поддержать проект',
+      'support.contact': 'Связаться по сотрудничеству',
+      'support.collab': 'Мы открыты к партнёрству с языковыми школами: можем создать тематические словари, адаптировать тренажёр под учебные программы и проводить интеграции.',
+      'share.title': 'Поделиться MOYAMOVA:',
 
       'footer.privacy': 'Политика конфиденциальности',
       'footer.terms': 'Условия использования',
@@ -126,6 +145,25 @@
       'faq.q3.text': 'Прогрес зберігається у вашому браузері на цьому пристрої. Якщо очистити дані браузера або змінити пристрій, тренажер почне з нуля.',
       'faq.q4.title': 'Які мови підтримуються?',
       'faq.q4.text': 'Зараз доступна німецька мова. Ми працюємо над розширенням списку мов та наборів слів.',
+      'faq.q5.title': 'Чи можна зберегти прогрес на майбутнє?',
+      'faq.q5.text': 'Зараз прогрес зберігається локально у вашому браузері на цьому пристрої. Ми працюємо над тим, щоб додати безпечну синхронізацію та відновлення при зміні пристрою.',
+      'faq.q6.title': 'Чи перенесеться прогрес на інший телефон або комп’ютер?',
+      'faq.q6.text': 'За замовчуванням ні: якщо ви зайдете з іншого пристрою або очистите дані браузера, тренажер почне спочатку. Ми розглядаємо варіанти перенесення прогресу через акаунт або код-перенесення.',
+      'faq.q7.title': 'Що щодо конфіденційності та даних?',
+      'faq.q7.text': 'Ми не зберігаємо ваші слова та прогрес на сервері. Усі дані залишаються у вашому браузері. Аналітику ми збираємо лише в знеособленому вигляді, щоб розуміти, як покращувати MOYAMOVA.',
+      'reviews.title': 'Відгуки користувачів',
+      'reviews.r1.text': 'Найкращий тренажер слів, який завжди під рукою. 5 хвилин на день — і вже відчувається прогрес.',
+      'reviews.r1.author': 'Анна, вивчає німецьку',
+      'reviews.r2.text': 'Подобається, що немає зайвого — лише картки, приклади та практика.',
+      'reviews.r2.author': 'Максим, B1',
+      'reviews.r3.text': 'Використовую зі студентами в мовній школі — зручно та зрозуміло.',
+      'reviews.r3.author': 'Оксана, викладачка',
+      'support.title': 'Підтримка та співпраця',
+      'support.text': 'Якщо вам подобається MOYAMOVA — ви можете підтримати розвиток проєкту або запропонувати спільну роботу.',
+      'support.donate': 'Підтримати проєкт',
+      'support.contact': 'Зв’язатися щодо співпраці',
+      'support.collab': 'Ми відкриті до партнерства з мовними школами: можемо створити тематичні словники, адаптувати тренажер під навчальні програми та проводити інтеграції.',
+      'share.title': 'Поділитися MOYAMOVA:',
 
       'footer.privacy': 'Політика конфіденційності',
       'footer.terms': 'Умови використання',
@@ -229,60 +267,34 @@
 
   // Simple slider for themes
 
-  // Support modal
-  const supportBackdrop = document.querySelector('.modal-backdrop[data-modal="support"]');
-  const supportOpenBtns = document.querySelectorAll('[data-role="support-open"]');
-  const supportCloseBtn = document.querySelector('[data-role="support-close"]');
-  const supportGoBtn = document.querySelector('[data-role="support-go"]');
+  
+  // Support & donate integration
+  function openDonateSheet() {
+    try {
+      if (window.Donate && typeof window.Donate.open === 'function') {
+        window.Donate.open();
+        return;
+      }
+    } catch (_) {}
 
-  function openSupport() {
-    if (supportBackdrop) {
-      supportBackdrop.classList.add('is-open');
-    }
+    // fallback: open monobank jar in new tab
+    const fallbackUrl = 'https://send.monobank.ua/jar/56HNLifwyr';
+    window.open(fallbackUrl, '_blank', 'noopener');
   }
 
-  function closeSupport() {
-    if (supportBackdrop) {
-      supportBackdrop.classList.remove('is-open');
-    }
-  }
-
-  supportOpenBtns.forEach((btn) => {
+  const supportButtons = document.querySelectorAll('[data-role="support-open"]');
+  supportButtons.forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      openSupport();
+      openDonateSheet();
     });
   });
 
-  if (supportCloseBtn) {
-    supportCloseBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      closeSupport();
-    });
-  }
-
-  if (supportBackdrop) {
-    supportBackdrop.addEventListener('click', (e) => {
-      if (e.target === supportBackdrop) {
-        closeSupport();
-      }
-    });
-  }
-
-  if (supportGoBtn) {
-    supportGoBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      // позже сюда можно будет добавить переход на страницу доната
-      closeSupport();
-    });
-  }
-
-  // Buy PRO opens same modal пока что
   const buyProBtn = document.querySelector('[data-role="buy-pro"]');
   if (buyProBtn) {
     buyProBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      openSupport();
+      openDonateSheet();
     });
   }
 
