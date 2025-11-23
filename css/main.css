@@ -661,3 +661,10 @@ body {
 }
 
 .screen-slider-small { max-width: 240px; }
+
+@media (max-width: 960px) {
+  .btn-support-header {
+    display: none;
+  }
+}
+  
