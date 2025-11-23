@@ -67,11 +67,21 @@
       'faq.q5.title': 'Как сохранить прогресс при переносе тренажёра на другое устройство?',
       'faq.q5.text': 'В приложении реализована функция экспорта и импорта. Вы можете сохранять резервную копию и без проблем переносить ваш прогресс между устройствами.',
       'faq.q6.title': 'Чем PRO-версия лучше?',
-      'faq.q6.text': 'Здесь позже появится описание возможностей PRO-версии и дополнительных инструментов для продвинутого обучения.',
+      'faq.q6.text': 'Здесь позже появится описание возможностей PRO-версии и дополнительных инструментов для продвинутого обучения.','reviews.title': 'Отзывы пользователей',
+      'reviews.r1.text': 'Лучший тренажёр слов, который всегда под рукой. 5 минут в день — и уже чувствуешь прогресс.',
+      'reviews.r1.author': 'Анна, учит немецкий',
+      'reviews.r2.text': 'Нравится, что нет лишнего — только карточки, примеры и практика.',
+      'reviews.r2.author': 'Максим, B1',
+      'reviews.r3.text': 'Использую со студентами в языковой школе — удобно и понятно.',
+      'reviews.r3.author': 'Оксана, преподаватель',
       'support.title': 'Поддержать проект',
-      'support.text': 'Если вам нравится MOYAMOVA, вы можете поддержать развитие тренажёра. Это помогает нам добавлять новые функции и словари.',
+      'support.text': 'Если вам нравится MOYAMOVA — вы можете поддержать развитие проекта. Это помогает нам развивать тренажёр и добавлять новые функции.',
       'support.donate': 'Поддержать проект',
-      'share.title': 'Поделиться MOYAMOVA:','footer.privacy': 'Политика конфиденциальности',
+      'support.contact': 'Связаться с командой',
+      'support.collab': '',
+      'share.title': 'Поделиться MOYAMOVA:',
+
+      'footer.privacy': 'Политика конфиденциальности',
       'footer.terms': 'Условия использования',
       'meta.title': 'MOYAMOVA — Личный тренажёр слов в вашем браузере'
     },
@@ -135,37 +145,7 @@
       'faq.q5.title': 'Як зберегти прогрес при перенесенні тренажера на інший пристрій?',
       'faq.q5.text': 'У застосунку реалізована функція експорту та імпорту, тож ви можете без проблем зберігати або переносити свій прогрес між пристроями.',
       'faq.q6.title': 'Чим краща PRO-версія?',
-      'faq.q6.text': 'Тут пізніше з’явиться опис можливостей PRO-версії та додаткових інструментів для просунутого навчання.',
-      'support.title': 'Підтримати проєкт',
-      'support.text': 'Якщо вам подобається MOYAMOVA, ви можете підтримати розвиток тренажера. Це допомагає нам додавати нові функції та словники.',
-      'support.donate': 'Підтримати проєкт',
-      'share.title': 'Поділитися MOYAMOVA:','footer.privacy': 'Політика конфіденційності',
-      'footer.terms': 'Умови використання',
-      'meta.title': 'MOYAMOVA — Особистий тренажер слів у вашому браузері'
-    }
-  };
-
-  function detectInitialLang() {
-    const stored = localStorage.getItem(LANG_STORAGE_KEY);
-    if (stored && (stored === 'ru' || stored === 'uk')) {
-      return stored;
-    }
-    const navLang = (navigator.language || navigator.userLanguage || 'ru').slice(0, 2).toLowerCase();
-    if (navLang === 'uk') return 'uk';
-    if (navLang === 'ru') return 'ru';
-    return 'ru';
-  }
-
-  function applyLang(lang) {
-    const dict = translations[lang] || translations.ru;
-    const elements = document.querySelectorAll('[data-i18n]');
-
-    elements.forEach((el) => {
-      const key = el.getAttribute('data-i18n');
-      const text = dict[key];
-      if (!text) return;
-      el.textContent = text;
-    });
+      'faq.q6.text': 'Тут пізніше з’явиться опис можливостей PRO-версії та додаткових інструментів для просунутого навчання.',});
 
     document.documentElement.lang = lang === 'uk' ? 'uk' : 'ru';
 
@@ -242,72 +222,43 @@
   // Simple slider for themes
 
   
+  // Support & donate integration
   function openDonateSheet() {
     try {
       if (window.Donate && typeof window.Donate.open === 'function') {
         window.Donate.open();
         return;
       }
-    } catch (e) {
-      // ignore
-    }
+    } catch (_) {}
+
+    // fallback: open monobank jar in new tab
     const fallbackUrl = 'https://send.monobank.ua/jar/56HNLifwyr';
     window.open(fallbackUrl, '_blank', 'noopener');
   }
 
-// Support modal
-  const supportBackdrop = document.querySelector('.modal-backdrop[data-modal="support"]');
-  const supportOpenBtns = document.querySelectorAll('[data-role="support-open"]');
-  const supportCloseBtn = document.querySelector('[data-role="support-close"]');
-  const supportGoBtn = document.querySelector('[data-role="support-go"]');
-
-  function openSupport() {
-    if (supportBackdrop) {
-      supportBackdrop.classList.add('is-open');
+  
+  function openProStub() {
+    const faqSection = document.getElementById('faq');
+    if (faqSection && typeof faqSection.scrollIntoView === 'function') {
+      faqSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      alert('PRO-версия в разработке. Скоро здесь появятся дополнительные функции.');
     }
   }
 
-  function closeSupport() {
-    if (supportBackdrop) {
-      supportBackdrop.classList.remove('is-open');
-    }
-  }
-
-  supportOpenBtns.forEach((btn) => {
+const supportButtons = document.querySelectorAll('[data-role="support-open"]');
+  supportButtons.forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       openDonateSheet();
     });
   });
 
-  if (supportCloseBtn) {
-    supportCloseBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      closeSupport();
-    });
-  }
-
-  if (supportBackdrop) {
-    supportBackdrop.addEventListener('click', (e) => {
-      if (e.target === supportBackdrop) {
-        closeSupport();
-      }
-    });
-  }
-
-  if (supportGoBtn) {
-    supportGoBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      openDonateSheet();
-    });
-  }
-
-  // Buy PRO opens same modal пока что
   const buyProBtn = document.querySelector('[data-role="buy-pro"]');
   if (buyProBtn) {
     buyProBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      openDonateSheet();
+      openProStub();
     });
   }
 
