@@ -39,6 +39,15 @@ body {
 }
 
 
+a {
+  color: var(--accent2);
+}
+
+a:hover {
+  color: var(--accent2);
+  text-decoration: underline;
+}
+
 .brand-word {
   font-weight: 700;
   color: var(--accent);
@@ -741,13 +750,3 @@ body {
     display: none !important;
   }
 }
-
-a {
-  color: var(--accent2);
-}
-
-a:hover {
-  color: var(--accent2);
-  text-decoration: underline;
-}
-  
