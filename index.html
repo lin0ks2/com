@@ -92,11 +92,8 @@
         </div>
 
         <div class="hero-visual">
-          <div class="phone-mock">
-            <div class="phone-notch"></div>
-            <div class="phone-screen">
-              <img src="./img/screen-light.jpg" alt="Светлая тема тренажёра moyamova" class="screen-img" />
-            </div>
+          <div class="hero-shot">
+            <img src="./img/screen-light.jpg" alt="Экран тренажёра moyamova" class="hero-screen-img" />
           </div>
         </div>
       </div>
@@ -166,12 +163,24 @@
 
         <div class="screens-grid">
           <div class="screen-item">
-            <div class="screen-placeholder theme-dual">
-              <img src="./img/screen-light.jpg" alt="Светлая тема moyamova" class="theme-img" />
-              <img src="./img/screen-dark.jpg" alt="Тёмная тема moyamova" class="theme-img" />
+            <div class="screen-placeholder">
+              <div class="screen-slider">
+                <div class="screen-slide is-active" data-index="0">
+                  <img src="./img/screen-light.jpg" alt="Светлая тема moyamova" class="screen-slide-img" />
+                  <span class="screen-badge" data-i18n="screens.light.label">Светлая тема</span>
+                </div>
+                <div class="screen-slide" data-index="1">
+                  <img src="./img/screen-dark.jpg" alt="Тёмная тема moyamova" class="screen-slide-img" />
+                  <span class="screen-badge" data-i18n="screens.dark.label">Тёмная тема</span>
+                </div>
+                <div class="screen-dots">
+                  <button class="screen-dot is-active" data-index="0" aria-label="Светлая тема"></button>
+                  <button class="screen-dot" data-index="1" aria-label="Тёмная тема"></button>
+                </div>
+              </div>
             </div>
             <p data-i18n="screens.themes.text">
-              Светлая и тёмная темы. Тренажёр автоматически подстраивается под систему, а при желании тему можно сменить вручную.
+              Светлая и тёмная темы. Тренажёр автоматически подстраивается под системные настройки, а при желании тему можно сменить вручную.
             </p>
           </div>
 
