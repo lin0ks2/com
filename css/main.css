@@ -200,7 +200,7 @@ body {
   }
 
   .nav {
-    gap: 12px;
+    display: none;
   }
 
   .lang-switch {
