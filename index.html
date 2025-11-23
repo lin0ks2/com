@@ -2,47 +2,51 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title data-i18n="meta.title">moyamova — Личный тренажёр слов в вашем браузере</title>
+  <title data-i18n="meta.title">MOYAMOVA — Личный тренажёр слов в вашем браузере</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
-        content="moyamova — это простой тренажёр слов на карточках, который работает прямо в браузере. Умные повторы, статистика, две темы и прогресс, который всегда с вами." />
-  <meta name="keywords" content="moyamova, тренажёр слов, карточки, изучение языков, немецкий, английский, испанский" />
+        content="MOYAMOVA — это простой тренажёр слов на карточках, который работает прямо в браузере. Умные повторы, статистика, две темы и прогресс, который всегда с вами." />
+  <meta name="keywords" content="MOYAMOVA, тренажёр слов, карточки, изучение языков, немецкий, английский, испанский" />
   <meta name="robots" content="index,follow" />
-  <meta name="application-name" content="moyamova" />
+  <meta name="application-name" content="MOYAMOVA" />
   <meta name="theme-color" content="#070816" />
 
-  <link rel="canonical" href="https://moyamova.com/" />
+  <link rel="canonical" href="https://MOYAMOVA.com/" />
 
-  <link rel="alternate" href="https://moyamova.com/" hreflang="ru" />
-  <link rel="alternate" href="https://moyamova.com/" hreflang="uk" />
-  <link rel="alternate" href="https://moyamova.com/" hreflang="x-default" />
+  <link rel="alternate" href="https://MOYAMOVA.com/" hreflang="ru" />
+  <link rel="alternate" href="https://MOYAMOVA.com/" hreflang="uk" />
+  <link rel="alternate" href="https://MOYAMOVA.com/" hreflang="x-default" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="moyamova" />
-  <meta property="og:title" content="moyamova — Личный тренажёр слов" />
+  <meta property="og:site_name" content="MOYAMOVA" />
+  <meta property="og:title" content="MOYAMOVA — Личный тренажёр слов" />
   <meta property="og:description"
         content="Карточки со словами, две темы, умные повторы и прогресс, который живёт в вашем телефоне." />
-  <meta property="og:url" content="https://moyamova.com/" />
-  <meta property="og:image" content="https://moyamova.com/img/og-cover.png" />
+  <meta property="og:url" content="https://MOYAMOVA.com/" />
+  <meta property="og:image" content="https://MOYAMOVA.com/img/og-cover.png" />
   <meta property="og:locale" content="ru_RU" />
   <meta property="og:locale:alternate" content="uk_UA" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="moyamova — Личный тренажёр слов" />
+  <meta name="twitter:title" content="MOYAMOVA — Личный тренажёр слов" />
   <meta name="twitter:description"
         content="Учите иностранные слова в чистом и понятном тренажёре на карточках." />
-  <meta name="twitter:image" content="https://moyamova.com/img/og-cover.png" />
+  <meta name="twitter:image" content="https://MOYAMOVA.com/img/og-cover.png" />
 
   <link rel="icon" href="/favicon.jpeg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./css/main.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
       <a href="#" class="logo">
-        <img src="./img/logo-icon.png" alt="moyamova logo" class="logo-img" />
-        <span class="logo-text">moyamova</span>
+        <img src="./img/logo-icon.png" alt="MOYAMOVA logo" class="logo-img" />
+        <span class="logo-text">MOYAMOVA</span>
       </a>
 
       <nav class="nav">
@@ -57,6 +61,10 @@
         <button class="lang-btn" data-lang="uk">UA</button>
       </div>
 
+      <button class="btn btn-support-header" data-role="support-open" data-i18n="support.headerCta">
+        Поддержать проект
+      </button>
+
       <button class="burger" aria-label="Открыть меню">
         <span></span><span></span><span></span>
       </button>
@@ -70,16 +78,22 @@
         <div class="hero-content">
           <h1 data-i18n="hero.title">Личный тренажёр слов, который живёт в вашем телефоне</h1>
           <p class="hero-subtitle" data-i18n="hero.subtitle">
-            moyamova — это тренажёр на карточках прямо в браузере.
+            MOYAMOVA — это тренажёр на карточках прямо в браузере.
             Без установки, с умными повторами и прогрессом, который не теряется.
           </p>
 
           <div class="hero-ctas">
-            <a href="https://moyamova.online/"
+            <a href="https://MOYAMOVA.online/"
                class="btn btn-primary"
                data-role="start-trainer"
                data-i18n="hero.ctaPrimary">
               Запустить тренажёр
+            </a>
+            <a href="#"
+               class="btn btn-pro"
+               data-role="buy-pro"
+               data-i18n="hero.ctaPro">
+              Купить PRO
             </a>
             <button class="btn btn-ghost" data-role="how-it-works" data-i18n="hero.ctaSecondary">
               Как это работает
@@ -93,7 +107,7 @@
 
         <div class="hero-visual">
           <div class="hero-shot">
-            <img src="./img/screen-light.jpg" alt="Экран тренажёра moyamova" class="hero-screen-img" />
+            <img src="./img/screen-light.jpg" alt="Экран тренажёра MOYAMOVA" class="hero-screen-img" />
           </div>
         </div>
       </div>
@@ -107,7 +121,7 @@
           <div class="feature-card">
             <h3 data-i18n="how.step1.title">1. Выбираете язык и набор слов</h3>
             <p data-i18n="how.step1.text">
-              Откройте тренажёр на moyamova.online, выберите язык и колоду. Система сама подберёт первую порцию слов.
+              Откройте тренажёр на MOYAMOVA.online, выберите язык и колоду. Система сама подберёт первую порцию слов.
             </p>
           </div>
           <div class="feature-card">
@@ -129,7 +143,7 @@
     <!-- WHO IS IT FOR -->
     <section id="who" class="section section-alt">
       <div class="container">
-        <h2 data-i18n="who.title">Кому подойдёт moyamova</h2>
+        <h2 data-i18n="who.title">Кому подойдёт MOYAMOVA</h2>
         <div class="grid-3">
           <div class="feature-card">
             <h3 data-i18n="who.card1.title">Тем, кто уже учит язык</h3>
@@ -158,7 +172,7 @@
       <div class="container">
         <h2 data-i18n="screens.title">Интерфейс</h2>
         <p class="section-lead" data-i18n="screens.lead">
-          moyamova проектирован в первую очередь как мобильный тренажёр. Один экран — одна карточка — одно решение.
+          MOYAMOVA проектирован в первую очередь как мобильный тренажёр. Один экран — одна карточка — одно решение.
         </p>
 
         <div class="screens-grid">
@@ -166,11 +180,11 @@
             <div class="screen-placeholder">
               <div class="screen-slider">
                 <div class="screen-slide is-active" data-index="0">
-                  <img src="./img/screen-light.jpg" alt="Светлая тема moyamova" class="screen-slide-img" />
+                  <img src="./img/screen-light.jpg" alt="Светлая тема MOYAMOVA" class="screen-slide-img" />
                   <span class="screen-badge" data-i18n="screens.light.label">Светлая тема</span>
                 </div>
                 <div class="screen-slide" data-index="1">
-                  <img src="./img/screen-dark.jpg" alt="Тёмная тема moyamova" class="screen-slide-img" />
+                  <img src="./img/screen-dark.jpg" alt="Тёмная тема MOYAMOVA" class="screen-slide-img" />
                   <span class="screen-badge" data-i18n="screens.dark.label">Тёмная тема</span>
                 </div>
                 <div class="screen-dots">
@@ -191,17 +205,16 @@
             <p data-i18n="screens.card2.text">
               Смотрите, сколько слов вы повторили и выучили за день и за последние недели.
             </p>
-          </div> 
+          </div>
 
-<div class="screen-item">
-  <div class="screen-placeholder">
-    <img src="./img/screen-dicts-ru.jpg" alt="Списки словарей по частям речи" class="screen-mini-img" />
-  </div>
-  <p data-i18n="screens.card4.text">
-    Удобно выбирайте нужные наборы слов — по частям речи, темам и уровню.
-  </p>
-</div>
-          
+          <div class="screen-item">
+            <div class="screen-placeholder">
+              <img src="./img/screen-dicts-ru.jpg" alt="Списки словарей по частям речи" class="screen-mini-img" />
+            </div>
+            <p data-i18n="screens.card4.text">
+              Удобно выбирайте нужные наборы слов — по частям речи, темам и уровню.
+            </p>
+          </div>
           <div class="screen-item">
             <div class="screen-placeholder">
               <div class="screen-slider screen-slider-small" data-slider="sets">
@@ -235,7 +248,7 @@
         <details class="faq-item" open>
           <summary data-i18n="faq.q1.title">Нужно ли что-то устанавливать?</summary>
           <p data-i18n="faq.q1.text">
-            Нет. moyamova работает прямо в браузере. На телефоне вы можете добавить тренажёр на главный экран — он будет вести себя как обычное приложение.
+            Нет. MOYAMOVA работает прямо в браузере. На телефоне вы можете добавить тренажёр на главный экран — он будет вести себя как обычное приложение.
           </p>
         </details>
 
@@ -267,22 +280,37 @@
     <div class="container footer-inner">
       <div class="footer-left">
         <span class="footer-logo">
-          <img src="./img/logo-icon.png" alt="moyamova logo small" />
+          <img src="./img/logo-icon.png" alt="MOYAMOVA logo small" />
         </span>
         <span class="footer-copy">
-          © <span id="year"></span> moyamova
+          © <span id="year"></span> MOYAMOVA
         </span>
       </div>
       <div class="footer-links">
-        <a href="https://moyamova.online/legal/privacy.ru.html" target="_blank" rel="noopener" data-i18n="footer.privacy">
+        <a href="https://MOYAMOVA.online/legal/privacy.ru.html" target="_blank" rel="noopener" data-i18n="footer.privacy">
           Политика конфиденциальности
         </a>
-        <a href="https://moyamova.online/legal/terms.ru.html" target="_blank" rel="noopener" data-i18n="footer.terms">
+        <a href="https://MOYAMOVA.online/legal/terms.ru.html" target="_blank" rel="noopener" data-i18n="footer.terms">
           Условия использования
         </a>
       </div>
     </div>
   </footer>
+
+
+  <!-- Support project modal -->
+  <div class="modal-backdrop" data-modal="support">
+    <div class="modal">
+      <button class="modal-close" data-role="support-close" aria-label="Закрыть">✕</button>
+      <h2 class="modal-title" data-i18n="support.title">Поддержать MOYAMOVA</h2>
+      <p class="modal-text" data-i18n="support.text">
+        Здесь позже появится страница доната и подробности о том, как поддержать развитие тренажёра.
+      </p>
+      <button class="btn btn-primary modal-primary" data-role="support-go" data-i18n="support.go">
+        Перейти к поддержке
+      </button>
+    </div>
+  </div>
 
   <script src="./js/main.js"></script>
 </body>
