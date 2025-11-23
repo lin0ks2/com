@@ -115,9 +115,12 @@ body {
 }
 
 .logo-text {
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", sans-serif;
   font-weight: 600;
-  letter-spacing: 0.02em;
-  font-size: 16px;
+  letter-spacing: 0.08em;
+  font-size: 18px;
+  text-transform: uppercase;
 }
 
 .nav {
@@ -221,6 +224,93 @@ body {
   }
 }
 
+
+.btn-pro {
+  background: linear-gradient(135deg, #ffb347, #ff6b6b);
+  color: #120805;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.65);
+}
+
+.btn-pro:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.75);
+}
+
+.btn-support-header {
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  font-size: 13px;
+  padding: 7px 12px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.btn-support-header:hover {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+/* Modal */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(3, 5, 20, 0.8);
+  backdrop-filter: blur(18px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 40;
+}
+
+.modal-backdrop.is-open {
+  display: flex;
+}
+
+.modal {
+  max-width: 360px;
+  width: 100%;
+  background: radial-gradient(circle at top, #25284b 0, #050614 70%);
+  border-radius: 24px;
+  padding: 20px 20px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.85);
+  position: relative;
+}
+
+.modal-title {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.modal-text {
+  margin: 0 0 16px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.modal-primary {
+  width: 100%;
+  justify-content: center;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .btn-support-header {
+    display: none;
+  }
+}
 /* HERO */
 
 .hero {
@@ -516,19 +606,25 @@ body {
 }
 
 .screen-mini-img {
-  width: 50%;
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  margin: 0 auto;
   border-radius: 16px;
   box-shadow: 0 12px 26px rgba(0, 0, 0, 0.7);
-}
 
 /* On very narrow screens stack vertically */
 @media (max-width: 520px) {
   .screen-dual-small {
     flex-direction: column;
   }
-  .screen-mini-img {
-    width: 100%;
-  }
+.screen-mini-img {
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  margin: 0 auto;
+  border-radius: 16px;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.7);
 }
 /* Responsive tweaks */
 
