@@ -1,1 +1,126 @@
-...
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title data-i18n="meta.title">moyamova — Личный тренажёр слов в вашем браузере</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+        content="moyamova — это тренажёр слов на карточках прямо в браузере. Светлая и тёмная темы, умные повторы и прогресс, который всегда с вами." />
+  <meta name="keywords" content="moyamova, тренажёр слов, карточки, изучение языков, немецкий, английский, испанский" />
+  <meta name="robots" content="index,follow" />
+  <meta name="application-name" content="moyamova" />
+  <meta name="theme-color" content="#070816" />
+
+  <link rel="canonical" href="https://moyamova.com/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="moyamova" />
+  <meta property="og:title" content="moyamova — Личный тренажёр слов" />
+  <meta property="og:description"
+        content="Карточки со словами, светлая и тёмная темы, умные повторы и прогресс, который живёт в вашем телефоне." />
+  <meta property="og:url" content="https://moyamova.com/" />
+  <meta property="og:image" content="https://moyamova.com/img/og-cover.png" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:locale:alternate" content="uk_UA" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="moyamova — Личный тренажёр слов" />
+  <meta name="twitter:description"
+        content="Учите иностранные слова в чистом и понятном тренажёре на карточках." />
+  <meta name="twitter:image" content="https://moyamova.com/img/og-cover.png" />
+
+  <link rel="icon" href="/favicon.jpeg" />
+  <link rel="stylesheet" href="./css/main.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo">
+        <img src="./img/logo-icon.png" alt="moyamova logo" class="logo-img" />
+        <span class="logo-text">moyamova</span>
+      </a>
+
+      <nav class="nav">
+        <a href="#how" class="nav-link" data-i18n="nav.how">Как работает</a>
+        <a href="#who" class="nav-link" data-i18n="nav.who">Кому подойдёт</a>
+        <a href="#screens" class="nav-link" data-i18n="nav.screens">Интерфейс</a>
+        <a href="#faq" class="nav-link" data-i18n="nav.faq">FAQ</a>
+      </nav>
+
+      <div class="lang-switch" aria-label="Language switcher">
+        <button class="lang-btn is-active" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="uk">UA</button>
+      </div>
+
+      <button class="burger" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <h1 data-i18n="hero.title">Личный тренажёр слов, который живёт в вашем телефоне</h1>
+          <p class="hero-subtitle" data-i18n="hero.subtitle">
+            moyamova работает в светлой и тёмной темах. Тренажёр сам подстраивается под систему — но вы можете переключить тему вручную.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="https://moyamova.online/"
+               class="btn btn-primary"
+               data-role="start-trainer"
+               data-i18n="hero.ctaPrimary">
+              Запустить тренажёр
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual theme-showcase">
+          <div class="phone-mock">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <img src="./img/screen-light.jpg" alt="Светлая тема moyamova" class="screen-img" />
+            </div>
+          </div>
+
+          <div class="phone-mock">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <img src="./img/screen-dark.jpg" alt="Тёмная тема moyamova" class="screen-img" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- existing sections unchanged -->
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span class="footer-logo">
+          <img src="./img/logo-icon.png" alt="moyamova logo small" />
+        </span>
+        <span class="footer-copy">
+          © <span id="year"></span> moyamova
+        </span>
+      </div>
+      <div class="footer-links">
+        <a href="https://moyamova.online/legal/privacy.ru.html" target="_blank" rel="noopener" data-i18n="footer.privacy">
+          Политика конфиденциальности
+        </a>
+        <a href="https://moyamova.online/legal/terms.ru.html" target="_blank" rel="noopener" data-i18n="footer.terms">
+          Условия использования
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>
