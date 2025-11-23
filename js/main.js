@@ -37,7 +37,9 @@
 
       'screens.title': 'Интерфейс',
       'screens.lead': 'moyamova проектирован в первую очередь как мобильный тренажёр. Один экран — одна карточка — одно решение.',
-      'screens.card1.text': 'Экран тренировки с понятными вариантами и крупными кнопками под палец.',
+      'screens.themes.text': 'Светлая и тёмная темы. Тренажёр автоматически подстраивается под системные настройки, а при желании тему можно сменить вручную.',
+      'screens.light.label': 'Светлая тема',
+      'screens.dark.label': 'Тёмная тема',
       'screens.card2.title': 'Статистика внутри тренажёра',
       'screens.card2.text': 'Смотрите, сколько слов вы повторили и выучили за день и за последние недели.',
       'screens.card3.title': 'Отдельные наборы ошибок и избранного',
@@ -87,7 +89,9 @@
 
       'screens.title': 'Інтерфейс',
       'screens.lead': 'moyamova спочатку задумувався як мобільний тренажер. Один екран — одна картка — одне рішення.',
-      'screens.card1.text': 'Екран тренування з зрозумілими варіантами та великими кнопками під палець.',
+      'screens.themes.text': 'Світла і темна теми. Тренажер автоматично підлаштовується під системні налаштування, а за бажання тему можна змінити вручну.',
+      'screens.light.label': 'Світла тема',
+      'screens.dark.label': 'Темна тема',
       'screens.card2.title': 'Статистика всередині тренажера',
       'screens.card2.text': 'Дивіться, скільки слів ви повторили та вивчили за день і за останні тижні.',
       'screens.card3.title': 'Окремі набори помилок та обраного',
@@ -200,6 +204,53 @@
       } else {
         window.open(TRAINER_URL, '_blank', 'noopener');
       }
+    });
+  }
+
+  // Simple slider for themes
+  const slider = document.querySelector('.screen-slider');
+  if (slider) {
+    const slides = slider.querySelectorAll('.screen-slide');
+    const dots = slider.querySelectorAll('.screen-dot');
+    let current = 0;
+
+    function setSlide(index) {
+      if (index < 0) index = slides.length - 1;
+      if (index >= slides.length) index = 0;
+      current = index;
+      slides.forEach((s, i) => {
+        s.classList.toggle('is-active', i === current);
+      });
+      dots.forEach((d, i) => {
+        d.classList.toggle('is-active', i === current);
+      });
+    }
+
+    dots.forEach((dot, idx) => {
+      dot.addEventListener('click', () => setSlide(idx));
+    });
+
+    let startX = null;
+
+    slider.addEventListener('touchstart', (e) => {
+      if (e.touches.length === 1) {
+        startX = e.touches[0].clientX;
+      }
+    });
+
+    slider.addEventListener('touchend', (e) => {
+      if (startX === null) return;
+      const endX = e.changedTouches[0].clientX;
+      const deltaX = endX - startX;
+      const threshold = 40;
+      if (Math.abs(deltaX) > threshold) {
+        if (deltaX < 0) {
+          setSlide(current + 1);
+        } else {
+          setSlide(current - 1);
+        }
+      }
+      startX = null;
     });
   }
 })();
