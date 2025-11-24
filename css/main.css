@@ -337,8 +337,24 @@ a:hover {
 .hero-inner {
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "content visual"
+    "bottom  visual";
   align-items: center;
   gap: 32px;
+}
+
+.hero-content {
+  grid-area: content;
+}
+
+.hero-visual {
+  grid-area: visual;
+}
+
+.hero-bottom {
+  grid-area: bottom;
 }
 
 .hero h1 {
@@ -660,6 +676,9 @@ a:hover {
 }
 
 
+
+/* small dual screenshots */
+
 .screen-dual-small {
   display: flex;
   align-items: flex-start;
@@ -675,55 +694,102 @@ a:hover {
   margin: 0 auto;
   border-radius: 16px;
   box-shadow: 0 12px 26px rgba(0, 0, 0, 0.7);
+}
 
 /* On very narrow screens stack vertically */
 @media (max-width: 520px) {
   .screen-dual-small {
     flex-direction: column;
   }
-.screen-mini-img {
-  display: block;
-  width: 100%;
-  max-width: 260px;
-  margin: 0 auto;
-  border-radius: 16px;
-  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.7);
 }
+
 /* Responsive tweaks */
 
+/* hero + layout up to tablets */
 @media (max-width: 900px) {
-  .hero-inner {
-    grid-template-columns: 1fr;
+  .hero {
+    padding: 40px 0 32px;
   }
 
-  .hero {
-    padding-top: 40px;
+  .hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-lang-badge {
+    margin: 0 0 12px;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+    line-height: 1.25;
+    margin-bottom: 12px;
+  }
+
+  .hero-subtitle {
+    max-width: 480px;
+    font-size: 14px;
+    line-height: 1.5;
   }
 
   .hero-visual {
-    order: -1;
+    margin-top: 8px;
+    margin-bottom: 12px;
   }
-}
 
-@media (max-width: 768px) {
-  .screens-grid {
-    grid-template-columns: 1fr;
+  .hero-bottom {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    text-align: center;
   }
-}
 
-@media (max-width: 520px) {
   .hero-ctas {
+    margin-bottom: 0;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+    gap: 10px;
   }
 
-  .footer-inner {
-    flex-direction: column;
-    align-items: flex-start;
+  .hero-ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-note {
+    font-size: 12px;
+    color: var(--text-muted);
   }
 }
 
-.screen-slider-small { max-width: 240px; }
+/* узкие телефоны */
+@media (max-width: 520px) {
+  .hero {
+    padding-top: 32px;
+  }
+
+  .hero h1 {
+    font-size: 22px;
+  }
+
+  .hero-subtitle {
+    font-size: 13px;
+  }
+}
+
+.screen-slider-small {
+  max-width: 240px;
+}
+
 @media (max-width: 1200px) {
   .btn-support-header {
     display: none !important;
