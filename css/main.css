@@ -345,18 +345,6 @@ a:hover {
   gap: 32px;
 }
 
-.hero-content {
-  grid-area: content;
-}
-
-.hero-visual {
-  grid-area: visual;
-}
-
-.hero-bottom {
-  grid-area: bottom;
-}
-
 .hero h1 {
   font-size: clamp(28px, 3vw, 36px);
   line-height: 1.1;
@@ -385,9 +373,19 @@ a:hover {
 /* Hero screenshot */
 
 .hero-visual {
+    grid-area: visual;
   display: flex;
   justify-content: center;
 }
+
+.hero-content {
+  grid-area: content;
+}
+
+.hero-bottom {
+  grid-area: bottom;
+}
+
 
 .hero-shot {
   max-width: 260px;
@@ -676,9 +674,6 @@ a:hover {
 }
 
 
-
-/* small dual screenshots */
-
 .screen-dual-small {
   display: flex;
   align-items: flex-start;
@@ -694,14 +689,69 @@ a:hover {
   margin: 0 auto;
   border-radius: 16px;
   box-shadow: 0 12px 26px rgba(0, 0, 0, 0.7);
-}
 
 /* On very narrow screens stack vertically */
 @media (max-width: 520px) {
   .screen-dual-small {
     flex-direction: column;
   }
+.screen-mini-img {
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  margin: 0 auto;
+  border-radius: 16px;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.7);
 }
+
+/* Stores section */
+
+.section-stores {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.stores-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.stores-text {
+  max-width: 480px;
+}
+
+.stores-subtitle {
+  margin: 8px 0 0;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.stores-badges {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.stores-label {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.stores-badges-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.store-badge img {
+  display: block;
+  height: 40px;
+}
+
 
 /* Responsive tweaks */
 
@@ -769,6 +819,16 @@ a:hover {
     font-size: 12px;
     color: var(--text-muted);
   }
+
+  .stores-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .stores-badges {
+    align-items: center;
+  }
 }
 
 /* узкие телефоны */
@@ -783,6 +843,23 @@ a:hover {
 
   .hero-subtitle {
     font-size: 13px;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .hero-ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 }
 
