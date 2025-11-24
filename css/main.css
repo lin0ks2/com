@@ -857,6 +857,9 @@ a:hover {
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  align-items: center;      /* центр по горизонтали */
+  justify-content: center;  /* центр по вертикали */
+  text-align: center;       /* центрируем текст */
   gap: 4px;
 }
 
