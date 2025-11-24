@@ -708,7 +708,7 @@ a:hover {
 /* hero + layout up to tablets */
 @media (max-width: 900px) {
   .hero {
-    padding: 16px 0 16px;
+    padding: 12px 0 12px;
   }
 
   .hero-inner {
@@ -800,12 +800,12 @@ a:hover {
 .stores-badges-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 16px;
 }
 
 .store-badge img {
   display: block;
-  height: 40px;   /* можешь поменять на 32px/36px, если хочется меньше */
+  height: 32px;   /* можешь поменять на 32px/36px, если хочется меньше */
   width: auto;
 }
 
