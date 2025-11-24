@@ -708,7 +708,7 @@ a:hover {
 /* hero + layout up to tablets */
 @media (max-width: 900px) {
   .hero {
-    padding: 40px 0 32px;
+    padding: 20px 0 16px;
   }
 
   .hero-inner {
@@ -739,8 +739,8 @@ a:hover {
   }
 
   .hero-visual {
-    margin-top: 8px;
-    margin-bottom: 12px;
+    margin-top: 4px;
+    margin-bottom: 6px;
   }
 
   .hero-bottom {
