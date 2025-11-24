@@ -826,3 +826,19 @@ a:hover {
 .donate-backdrop {
   z-index: 9999;
 }
+
+.hero-pro {
+  margin-top: 8px;
+}
+
+.hero-pro .btn-pro {
+  width: 100%;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .hero-pro .btn-pro {
+    width: auto;
+    padding-inline: 22px;
+  }
+}
