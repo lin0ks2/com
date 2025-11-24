@@ -310,8 +310,8 @@ a:hover {
     display: none;
   }
 }
-/* HERO */
 
+/* HERO */
 
 .hero-lang-badge {
   display: inline-flex;
@@ -330,6 +330,7 @@ a:hover {
 .hero-lang-flag {
   font-size: 26px;
 }
+
 .hero {
   padding: 64px 0 48px;
 }
@@ -484,8 +485,6 @@ a:hover {
 /* Slider for themes */
 
 .screen-slider {
-  max-width: 260px;
-
   position: relative;
   max-width: 260px;
   margin: 0 auto;
@@ -659,6 +658,7 @@ a:hover {
   }
 }
 
+/* small dual screenshots */
 
 .screen-dual-small {
   display: flex;
@@ -675,33 +675,42 @@ a:hover {
   margin: 0 auto;
   border-radius: 16px;
   box-shadow: 0 12px 26px rgba(0, 0, 0, 0.7);
+}
 
 /* On very narrow screens stack vertically */
 @media (max-width: 520px) {
   .screen-dual-small {
     flex-direction: column;
   }
-.screen-mini-img {
-  display: block;
-  width: 100%;
-  max-width: 260px;
-  margin: 0 auto;
-  border-radius: 16px;
-  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.7);
 }
+
 /* Responsive tweaks */
 
+/* hero + layout up to tablets */
 @media (max-width: 900px) {
-  .hero-inner {
-    grid-template-columns: 1fr;
+  .hero {
+    padding: 40px 0 40px;
   }
 
-  .hero {
-    padding-top: 40px;
+  .hero-inner {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
   }
 
   .hero-visual {
-    order: -1;
+    justify-content: center;
+    order: 0; /* оставляем порядок: сначала текст, потом телефон */
+  }
+
+  .hero h1 {
+    font-size: 26px;
+    line-height: 1.25;
+  }
+
+  .hero-subtitle {
+    max-width: none;
+    font-size: 14px;
+    line-height: 1.5;
   }
 }
 
@@ -711,19 +720,42 @@ a:hover {
   }
 }
 
+/* узкие телефоны */
 @media (max-width: 520px) {
+  .hero {
+    padding-top: 32px;
+  }
+
+  .hero h1 {
+    font-size: 22px;
+  }
+
+  .hero-subtitle {
+    font-size: 13px;
+  }
+
   .hero-ctas {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .hero-ctas .btn {
+    width: 100%;
+    justify-content: center;
   }
 
   .footer-inner {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
   }
 }
 
-.screen-slider-small { max-width: 240px; }
+.screen-slider-small {
+  max-width: 240px;
+}
+
 @media (max-width: 1200px) {
   .btn-support-header {
     display: none !important;
