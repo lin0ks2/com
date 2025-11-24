@@ -316,12 +316,13 @@ a:hover {
 .hero-lang-badge {
   display: inline-flex;
   align-items: center;
+  justify-content: center;   /* центр внутри бейджа */
   gap: 6px;
   padding: 4px 10px;
   border-radius: 999px;
   background: rgba(8, 10, 30, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  margin-bottom: 12px;
+  margin: 0 auto 12px;       /* auto слева/справа = центр по горизонтали */
   font-size: 13px;
   color: var(--text-muted);
 }
