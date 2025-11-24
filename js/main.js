@@ -169,43 +169,52 @@
   }
 
   function applyLang(lang) {
-    const dict = translations[lang] || translations.ru;
-    const elements = document.querySelectorAll('[data-i18n]');
+  const dict = translations[lang] || translations.ru;
+  const elements = document.querySelectorAll('[data-i18n]');
 
-    elements.forEach((el) => {
-      const key = el.getAttribute('data-i18n');
-      const text = dict[key];
-      if (!text) return;
-      el.innerHTML = text;
-    });
+  elements.forEach((el) => {
+    const key = el.getAttribute('data-i18n');
+    const text = dict[key];
+    if (!text) return;
+    el.innerHTML = text;
+  });
 
-    document.documentElement.lang = lang === 'uk' ? 'uk' : 'ru';
+  document.documentElement.lang = lang === 'uk' ? 'uk' : 'ru';
 
-    if (dict['meta.title']) {
-      document.title = dict['meta.title'];
-    }
-
-    const langButtons = document.querySelectorAll('.lang-btn');
-    langButtons.forEach((btn) => {
-      btn.classList.toggle('is-active', btn.getAttribute('data-lang') === lang);
-    });
+  if (dict['meta.title']) {
+    document.title = dict['meta.title'];
   }
 
-  const currentLang = detectInitialLang();
-  applyLang(currentLang);
+  const langButtons = document.querySelectorAll('.lang-btn');
+  langButtons.forEach((btn) => {
+    btn.classList.toggle('is-active', btn.getAttribute('data-lang') === lang);
+  });
 
-  const langSwitch = document.querySelector('.lang-switch');
-  if (langSwitch) {
-    langSwitch.addEventListener('click', (e) => {
-      const btn = e.target.closest('.lang-btn');
-      if (!btn) return;
-      const lang = btn.getAttribute('data-lang');
-      if (!lang || !(lang in translations)) return;
-      localStorage.setItem(LANG_STORAGE_KEY, lang);
-      applyLang(lang);
-    });
+  // 🔗 обновляем ссылки на локальные legal-страницы
+  const privacyLink = document.querySelector('[data-legal="privacy"]');
+  const termsLink   = document.querySelector('[data-legal="terms"]');
+
+  if (privacyLink && termsLink) {
+    const suffix = lang === 'uk' ? 'uk' : 'ru'; // сейчас на лендинге только ru/uk
+    privacyLink.href = `./legal/privacy.${suffix}.html`;
+    termsLink.href   = `./legal/terms.${suffix}.html`;
   }
+}
 
+const currentLang = detectInitialLang();
+applyLang(currentLang);
+
+const langSwitch = document.querySelector('.lang-switch');
+if (langSwitch) {
+  langSwitch.addEventListener('click', (e) => {
+    const btn = e.target.closest('.lang-btn');
+    if (!btn) return;
+    const lang = btn.getAttribute('data-lang');
+    if (!lang || !(lang in translations)) return;
+    localStorage.setItem(LANG_STORAGE_KEY, lang);
+    applyLang(lang);
+  });
+}
   // Burger menu toggle
   const burger = document.querySelector('.burger');
   const nav = document.querySelector('.nav');
