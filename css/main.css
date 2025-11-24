@@ -795,3 +795,16 @@ a:hover {
     display: none !important;
   }
 }
+
+/* Store badges (Google Play / App Store) */
+.stores-badges-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.store-badge img {
+  display: block;
+  height: 40px;   /* можешь поменять на 32px/36px, если хочется меньше */
+  width: auto;
+}
