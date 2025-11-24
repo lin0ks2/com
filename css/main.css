@@ -823,3 +823,6 @@ a:hover {
     justify-content: center;
   }
 }
+.donate-backdrop {
+  z-index: 9999;
+}
