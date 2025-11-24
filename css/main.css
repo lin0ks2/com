@@ -391,7 +391,7 @@ a:hover {
 }
 
 .hero-shot {
-  max-width: 180px;
+  max-width: 175px;
   width: 100%;
   border-radius: 30px;
   padding: 6px;
@@ -809,6 +809,7 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+  justify-content: center;
 }
 
 .store-badge img {
