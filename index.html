@@ -358,29 +358,64 @@
 
   </main>
 
-  
-    <section id="support" class="section section-alt">
-      <div class="container">
-        <h2 data-i18n="support.title">Поддержать проект</h2>
-        <p data-i18n="support.text">
-          Если вам нравится <span class="brand-word">MOYAMOVA</span> — вы можете поддержать развитие проекта. Это помогает нам развивать тренажёр и добавлять новые функции.
-        </p>
+  <section id="support" class="section section-alt">
+  <div class="container">
+    <h2 data-i18n="support.title">Поддержать проект</h2>
+    <p data-i18n="support.text">
+      Если вам нравится <span class="brand-word">MOYAMOVA</span>, вы можете поддержать развитие проекта любым комфортным способом. Это помогает нам развивать тренажёр и добавлять новые функции.
+    </p>
 
-        <div class="support-actions">
-          <a href="#" class="btn btn-primary" data-role="support-open" data-i18n="support.donate">Поддержать проект</a>
-        </div>
+    <!-- Спойлер с вариантами доната -->
+    <details class="donate-accordion" id="donate-accordion">
+      <summary class="donate-accordion__summary">
+        <span class="donate-accordion__title" data-i18n="support.accordionTitle">
+          Поддержать проект
+        </span>
+        <span class="donate-accordion__hint" data-i18n="support.accordionHint">
+          Выберите удобный способ доната
+        </span>
+      </summary>
 
-        <div class="share-block">
-          <p data-i18n="share.title">Поделиться <span class="brand-word">MOYAMOVA</span>:</p>
-          <div class="share-buttons">
-            <a href="https://t.me/share/url?url=https://MOYAMOVA.com" target="_blank" rel="noopener">Telegram</a>
-            <a href="https://twitter.com/intent/tweet?url=https://MOYAMOVA.com" target="_blank" rel="noopener">Twitter</a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://MOYAMOVA.com" target="_blank" rel="noopener">Facebook</a>
-            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://MOYAMOVA.com" target="_blank" rel="noopener">LinkedIn</a>
+      <div class="donate-accordion__body">
+        <section class="donate-section">
+          <h3 data-i18n="donateMonoTitle">Поддержать через Monobank</h3>
+          <div class="donate-cta-wrap">
+            <a
+              class="donate-cta donate-cta--mono"
+              href="https://send.monobank.ua/jar/56HNLifwyr"
+              target="_blank"
+              rel="noopener"
+              data-dc="mono"
+              data-i18n="donateMonoOpen"
+            >
+              Открыть Monobank
+            </a>
           </div>
-        </div>
+        </section>
+
+        <section class="donate-section">
+          <h3 data-i18n="donatePaypalTitle">Поддержать через PayPal</h3>
+          <div class="donate-cta-wrap">
+            <a
+              class="donate-cta donate-cta--paypal"
+              href="https://www.paypal.com/donate/?hosted_button_id=KFBR8BW5ZZTQ4"
+              target="_blank"
+              rel="noopener"
+              data-dc="paypal"
+              data-i18n="donatePaypalOpen"
+            >
+              Открыть PayPal
+            </a>
+          </div>
+        </section>
       </div>
-    </section>
+    </details>
+
+    <div class="share-block">
+      ...
+    </div>
+  </div>
+</section>
 <section class="section section-alt section-stores">
   <div class="container stores-inner">
     <div class="stores-text">
