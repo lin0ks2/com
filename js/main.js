@@ -279,21 +279,7 @@ function openDonateSheet() {
   
   // Simple slider for themes
 
-  const supportButtons = document.querySelectorAll('[data-role="support-open"]');
-supportButtons.forEach((btn) => {
-  btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    openDonateSheet();
-  });
-});
 
-const buyProBtn = document.querySelector('[data-role="buy-pro"]');
-if (buyProBtn) {
-  buyProBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    openDonateSheet();
-  });
-}
 
   const supportButtons = document.querySelectorAll('[data-role="support-open"]');
   supportButtons.forEach((btn) => {
