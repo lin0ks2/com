@@ -390,10 +390,10 @@ a:hover {
 }
 
 .hero-shot {
-  max-width: 260px;
+  max-width: 210px;
   width: 100%;
   border-radius: 30px;
-  padding: 8px;
+  padding: 6px;
   background: radial-gradient(circle at top, #272b4b 0, #08091a 70%);
   box-shadow: var(--shadow-soft);
   border: 1px solid rgba(255, 255, 255, 0.08);
