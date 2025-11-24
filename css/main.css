@@ -925,16 +925,18 @@ a:hover {
   transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease;
 }
 
-/* Monobank — тёплая плашка */
+/* Monobank — тёмная брендовая плашка с бирюзовой рамкой */
 .donate-cta--mono {
-  background: linear-gradient(135deg, #ffd66b, #ffb347);
-  color: #120805;
+  background: linear-gradient(135deg, #070816, #11152a);
+  color: var(--text);
+  border-color: var(--accent);
 }
 
-/* PayPal — холодная, в цвет нашей палитры */
+/* PayPal — фирменный градиент приложения */
 .donate-cta--paypal {
   background: linear-gradient(135deg, var(--accent), var(--accent2));
   color: #031012;
+  border-color: transparent;
 }
 
 .donate-cta:active {
