@@ -254,19 +254,21 @@
   // Simple slider for themes
 
   
-  // Support & donate integration
-  function openDonateSheet() {
-    try {
-      if (window.Donate && typeof window.Donate.open === 'function') {
-        window.Donate.open();
-        return;
-      }
-    } catch (_) {}
+  const supportButtons = document.querySelectorAll('[data-role="support-open"]');
+supportButtons.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    openDonateSheet();
+  });
+});
 
-    // fallback: open monobank jar in new tab
-    const fallbackUrl = 'https://send.monobank.ua/jar/56HNLifwyr';
-    window.open(fallbackUrl, '_blank', 'noopener');
-  }
+const buyProBtn = document.querySelector('[data-role="buy-pro"]');
+if (buyProBtn) {
+  buyProBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    openDonateSheet();
+  });
+}
 
   const supportButtons = document.querySelectorAll('[data-role="support-open"]');
   supportButtons.forEach((btn) => {
