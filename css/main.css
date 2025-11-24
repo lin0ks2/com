@@ -675,12 +675,15 @@ a:hover {
   margin: 0 auto;
   border-radius: 16px;
   box-shadow: 0 12px 26px rgba(0, 0, 0, 0.7);
+}
 
 /* On very narrow screens stack vertically */
 @media (max-width: 520px) {
   .screen-dual-small {
     flex-direction: column;
   }
+}
+
 .screen-mini-img {
   display: block;
   width: 100%;
