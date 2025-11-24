@@ -330,7 +330,6 @@ a:hover {
 .hero-lang-flag {
   font-size: 26px;
 }
-
 .hero {
   padding: 64px 0 48px;
 }
@@ -676,15 +675,20 @@ a:hover {
   margin: 0 auto;
   border-radius: 16px;
   box-shadow: 0 12px 26px rgba(0, 0, 0, 0.7);
-}
 
 /* On very narrow screens stack vertically */
 @media (max-width: 520px) {
   .screen-dual-small {
     flex-direction: column;
   }
+.screen-mini-img {
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  margin: 0 auto;
+  border-radius: 16px;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.7);
 }
-
 /* Responsive tweaks */
 
 @media (max-width: 900px) {
@@ -720,38 +724,8 @@ a:hover {
 }
 
 .screen-slider-small { max-width: 240px; }
-
 @media (max-width: 1200px) {
   .btn-support-header {
     display: none !important;
-  }
-}
-
-/* Mobile tweaks: hero title and language badge */
-@media (max-width: 768px) {
-  /* Center hero title and make font slightly smaller */
-  .hero h1 {
-    text-align: center;
-    font-size: 26px;
-  }
-
-  /* Make badge behave like two centered columns: flag + centered text */
-  .hero-lang-badge {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    text-align: center;
-  }
-
-  .hero-lang-flag {
-    flex-shrink: 0;
-  }
-
-  /* Text inside badge */
-  .hero-lang-badge span {
-    display: block;
-    text-align: center;
-    max-width: 220px;
   }
 }
