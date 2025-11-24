@@ -203,16 +203,46 @@ a:hover {
   background: var(--text);
 }
 
-@media (max-width: 900px) {
-  .header-inner {
-    padding-inline: 16px;
+@media (min-width: 900px) {
+  .hero {
+    padding-top: 80px;
+    padding-bottom: 64px;
+  }
+
+  /* Заголовок визуально «привязываем» к левой колонке */
+  .hero-title {
+    text-align: left;
+    margin: 0 auto 24px;
+    max-width: 520px; /* подгоняется под ширину текста слева */
+  }
+
+  .hero-title h1 {
+    margin: 0;
+  }
+
+  /* Двухколоночная сетка для десктопа */
+  .hero-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .hero-content {
+    text-align: left;
+  }
+
+  /* Бейдж с флагом привязываем к левому краю, а не к центру */
+  .hero-lang-badge {
+    margin: 0 0 12px;
+    justify-content: flex-start;
+  }
+
+  /* Телефон уезжает вправо, чтобы получилась чистая двухколоночность */
+  .hero-visual {
+    justify-content: flex-end;
   }
 }
-
-@media (max-width: 768px) {
-  .header-inner {
-    padding-inline: 16px;
-  }
 
   .nav {
     display: none;
