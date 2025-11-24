@@ -888,11 +888,12 @@ a:hover {
 /* Карточки донатов — стили перенесены из donate.js */
 
 .donate-section {
-  background: #fafbfc;
-  border-radius: 12px;
-  padding: 16px;
+  background: rgba(8, 10, 30, 0.96);
+  border-radius: 16px;
+  padding: 16px 14px;
   margin: 8px 0;
-  border: 1px solid #eef1f4;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.6);
 }
 
 .donate-section h3 {
@@ -900,8 +901,8 @@ a:hover {
   font-size: 16px;
   line-height: 1.35;
   text-align: center;
-  font-weight: 700;
-  color: #111;
+  font-weight: 600;
+  color: var(--text);
 }
 
 .donate-cta-wrap {
@@ -912,27 +913,34 @@ a:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 16px;
-  border-radius: 12px;
+  padding: 12px 18px;
+  border-radius: 999px;
   font-weight: 600;
   cursor: pointer;
-  background: #fff;
-  color: #111;
   text-decoration: none;
-  border: 2px solid;
   min-width: 240px;
+
+  border: 1px solid transparent;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.6);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease;
 }
 
+/* Monobank — тёплая плашка */
 .donate-cta--mono {
-  border-color: #f7c948; /* жёлтый контур */
+  background: linear-gradient(135deg, #ffd66b, #ffb347);
+  color: #120805;
 }
 
+/* PayPal — холодная, в цвет нашей палитры */
 .donate-cta--paypal {
-  border-color: #0b57d0; /* синий контур */
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #031012;
 }
 
 .donate-cta:active {
   transform: scale(0.98);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7);
+  opacity: 0.96;
 }
 
 @media (max-width: 480px) {
