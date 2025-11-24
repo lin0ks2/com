@@ -55,6 +55,12 @@
       'screens.errors.label': 'Мои ошибки',
       'screens.fav.label': 'Избранное',
 
+'support.accordionHint': 'Выберите удобный способ',
+'donateMonoTitle': 'Поддержать через Monobank',
+'donateMonoOpen': 'Открыть Monobank',
+'donatePaypalTitle': 'Поддержать через PayPal',
+'donatePaypalOpen': 'Открыть PayPal',
+      
       'faq.title': 'FAQ',
       'faq.q1.title': 'Это бесплатно?',
       'faq.q1.text': 'Да, тренажёр можно использовать бесплатно для некоммерческого использования. В тренажёре есть платные функции, которые повышают удобство и эффективность обучения, но они не являются обязательными к покупке.',
@@ -129,6 +135,12 @@
       'screens.errors.label': 'Мої помилки',
       'screens.fav.label': 'Обране',
 
+'support.accordionHint': 'Оберіть зручний спосіб',
+'donateMonoTitle': 'Підтримати через Monobank',
+'donateMonoOpen': 'Відкрити Monobank',
+'donatePaypalTitle': 'Підтримати через PayPal',
+'donatePaypalOpen': 'Відкрити PayPal',
+      
       'faq.title': 'FAQ',
       'faq.q1.title': 'Це безкоштовно?',
       'faq.q1.text': 'Так, тренажер можна використовувати безкоштовно для некомерційного використання. У тренажері є платні функції, які підвищують зручність та ефективність навчання, але вони не є обов’язковими до покупки.',
