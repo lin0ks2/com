@@ -808,3 +808,9 @@ a:hover {
   height: 40px;   /* можешь поменять на 32px/36px, если хочется меньше */
   width: auto;
 }
+
+@media (max-width: 720px) {
+  .stores-badges-row {
+    justify-content: center;
+  }
+}
