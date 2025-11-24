@@ -251,9 +251,34 @@
     });
   }
 
+function openDonateSheet() {
+  const accordion = document.querySelector('#donate-accordion');
+
+  if (accordion) {
+    // открыть спойлер, если он закрыт
+    if (!accordion.open) {
+      accordion.open = true;
+    }
+
+    // плавно проскроллить к блоку поддержки
+    try {
+      accordion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } catch (_) {
+      // на старых браузерах без smooth: хотя бы обычный скролл
+      const rect = accordion.getBoundingClientRect();
+      window.scrollTo(0, window.scrollY + rect.top - 16);
+    }
+
+    return;
+  }
+
+  // на всякий случай — если по какой-то причине блока нет
+  const fallbackUrl = 'https://send.monobank.ua/jar/56HNLifwyr';
+  window.location.href = fallbackUrl;
+}
+  
   // Simple slider for themes
 
-  
   const supportButtons = document.querySelectorAll('[data-role="support-open"]');
 supportButtons.forEach((btn) => {
   btn.addEventListener('click', (e) => {
