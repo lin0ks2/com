@@ -708,7 +708,7 @@ a:hover {
 /* hero + layout up to tablets */
 @media (max-width: 900px) {
   .hero {
-    padding: 20px 0 16px;
+    padding: 16px 0 16px;
   }
 
   .hero-inner {
@@ -729,7 +729,7 @@ a:hover {
   .hero h1 {
     font-size: 26px;
     line-height: 1.25;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   .hero-subtitle {
