@@ -310,8 +310,8 @@ a:hover {
     display: none;
   }
 }
-
 /* HERO */
+
 
 .hero-lang-badge {
   display: inline-flex;
@@ -330,7 +330,6 @@ a:hover {
 .hero-lang-flag {
   font-size: 26px;
 }
-
 .hero {
   padding: 64px 0 48px;
 }
@@ -485,6 +484,8 @@ a:hover {
 /* Slider for themes */
 
 .screen-slider {
+  max-width: 260px;
+
   position: relative;
   max-width: 260px;
   margin: 0 auto;
@@ -658,7 +659,6 @@ a:hover {
   }
 }
 
-/* small dual screenshots */
 
 .screen-dual-small {
   display: flex;
@@ -675,66 +675,70 @@ a:hover {
   margin: 0 auto;
   border-radius: 16px;
   box-shadow: 0 12px 26px rgba(0, 0, 0, 0.7);
-}
 
 /* On very narrow screens stack vertically */
 @media (max-width: 520px) {
   .screen-dual-small {
     flex-direction: column;
   }
+.screen-mini-img {
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  margin: 0 auto;
+  border-radius: 16px;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.7);
 }
-
 /* Responsive tweaks */
 
-/* hero + layout up to tablets */
 @media (max-width: 900px) {
   .hero {
-    padding: 40px 0 40px;
+    padding: 40px 0 32px;
   }
 
   .hero-inner {
-    grid-template-columns: 1fr;
-    row-gap: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .hero-visual {
-    justify-content: center;
-    order: 0; /* оставляем порядок: сначала текст, потом телефон */
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-lang-badge {
+    margin: 0 0 12px;
   }
 
   .hero h1 {
     font-size: 26px;
     line-height: 1.25;
+    margin-bottom: 12px;
   }
 
   .hero-subtitle {
-    max-width: none;
+    max-width: 480px;
     font-size: 14px;
     line-height: 1.5;
   }
-}
 
-@media (max-width: 768px) {
-  .screens-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* узкие телефоны */
-@media (max-width: 520px) {
-  .hero {
-    padding-top: 32px;
+  .hero-visual {
+    margin-top: 12px;
+    margin-bottom: 16px;
   }
 
-  .hero h1 {
-    font-size: 22px;
-  }
-
-  .hero-subtitle {
-    font-size: 13px;
+  .hero-footer {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    text-align: center;
   }
 
   .hero-ctas {
+    margin-bottom: 0;
     flex-direction: column;
     align-items: stretch;
     gap: 10px;
@@ -745,6 +749,27 @@ a:hover {
     justify-content: center;
   }
 
+  .hero-note {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+}
+
+  .hero {
+    padding-top: 40px;
+  }
+
+  .hero-visual {
+    order: -1;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-ctas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
   .footer-inner {
     flex-direction: column;
     align-items: center;
@@ -752,10 +777,8 @@ a:hover {
   }
 }
 
-.screen-slider-small {
-  max-width: 240px;
-}
 
+.screen-slider-small { max-width: 240px; }
 @media (max-width: 1200px) {
   .btn-support-header {
     display: none !important;
