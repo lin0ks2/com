@@ -314,7 +314,7 @@
 
   // Smart opening of trainer
   const startBtn = document.querySelector('[data-role="start-trainer"]');
-  const TRAINER_URL = 'https://MOYAMOVA.online/';
+  const TRAINER_URL_FALLBACK = 'https://MOYAMOVA.online/';
 
   if (startBtn) {
     startBtn.addEventListener('click', (e) => {
@@ -325,14 +325,17 @@
         device: window.innerWidth < 768 ? 'mobile' : 'desktop'
       });
 
+      // Берём URL из href — сюда GA4 при cross-domain подставит _gl
+      const targetUrl = startBtn.href || TRAINER_URL_FALLBACK;
+
       const isMobile =
         /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
         window.innerWidth < 768;
 
       if (isMobile) {
-        window.location.href = TRAINER_URL;
+        window.location.href = targetUrl;
       } else {
-        window.open(TRAINER_URL, '_blank', 'noopener');
+        window.open(targetUrl, '_blank', 'noopener');
       }
     });
   }
