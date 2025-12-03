@@ -312,34 +312,45 @@
     });
   }
 
-  // Smart opening of trainer
-  const startBtn = document.querySelector('[data-role="start-trainer"]');
-  const TRAINER_URL_FALLBACK = 'https://MOYAMOVA.online/';
+ // Smart opening of trainer
+const startBtn = document.querySelector('[data-role="start-trainer"]');
+const TRAINER_URL_FALLBACK = 'https://MOYAMOVA.online/';
 
-  if (startBtn) {
-    startBtn.addEventListener('click', (e) => {
-      e.preventDefault();
+if (startBtn) {
+  startBtn.addEventListener('click', (e) => {
+    e.preventDefault();
 
-      trackEvent('start_trainer', {
-        location: 'hero',
-        device: window.innerWidth < 768 ? 'mobile' : 'desktop'
-      });
-
-      // Берём URL из href — сюда GA4 при cross-domain подставит _gl
-      const targetUrl = startBtn.href || TRAINER_URL_FALLBACK;
-
-      const isMobile =
-        /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
-        window.innerWidth < 768;
-
-      if (isMobile) {
-        window.location.href = targetUrl;
-      } else {
-        window.open(targetUrl, '_blank', 'noopener');
-      }
+    trackEvent('start_trainer', {
+      location: 'hero',
+      device: window.innerWidth < 768 ? 'mobile' : 'desktop'
     });
-  }
 
+    // Берём URL из href — сюда GA4 при cross-domain подставит _gl
+    const targetUrl = startBtn.href || TRAINER_URL_FALLBACK;
+
+    const isMobile =
+      /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
+      window.innerWidth < 768;
+
+    if (isMobile) {
+      // На мобилках всегда фуллскрин
+      window.location.href = targetUrl;
+    } else {
+      // На десктопе — "мобильное" окошко по центру
+      const w = 430;
+      const h = 800;
+      const left = Math.round(window.screenX + (window.innerWidth - w) / 2);
+      const top  = Math.round(window.screenY + (window.innerHeight - h) / 2);
+
+      window.open(
+        targetUrl,
+        'MOYAMOVATrainer',
+        `width=${w},height=${h},left=${left},top=${top},` +
+          'resizable=yes,scrollbars=yes,status=no'
+      );
+    }
+  });
+}
   function openDonateSheet() {
     const accordion = document.querySelector('#donate-accordion');
 
