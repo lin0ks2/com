@@ -704,11 +704,8 @@ body.page {
     }
 
     @media (max-width: 600px) {
-      .section {
-        padding: 52px 0;
-      }
-
-      .maintenance-card {
+  .section { padding: 12px 0 18px; }
+.maintenance-card {
         padding: 20px 16px 16px;
       }
 
@@ -725,27 +722,52 @@ body.page {
 .maintenance-cta{display:flex !important; justify-content:center; align-items:center; margin-left:auto !important; margin-right:auto !important;}
 
 
-/* Hero: keep first block within one screen on mobile, keep 2 columns */
+/* ===== Hero (About) layout: keep 2 columns even on mobile, make slider height follow text ===== */
 :root {
+  /* Sticky header height approximation (used for 1-screen hero on mobile Safari) */
   --header-h: 64px;
 }
 
+/* About card: slider/text row + CTA row */
 .maintenance-card--about {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 
+/* Two columns always (desktop and mobile) */
 .about-grid {
-  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 16px;
+  align-items: stretch; /* make left media column match right content height */
+  min-height: 0;
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 0.90fr 1.10fr;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+}
+
+.about-media,
+.about-content {
   min-height: 0;
 }
 
 .about-media {
-  height: 100%;
-  min-height: 0;
+  display: flex;
 }
 
+/* Slider takes full height of its column (defined by right column text height) */
 .about-media .mm-slider,
 .about-media .mm-slider__viewport,
 .about-media .mm-slider__track,
@@ -753,53 +775,65 @@ body.page {
   height: 100%;
 }
 
+/* Default: keep screenshots fully visible */
 .mm-slider__img {
-  height: 100%;
   width: 100%;
+  height: 100%;
   object-fit: contain;
+  display: block;
 }
 
+/* Poster: fill the frame (avoid tiny poster with huge empty margins) */
+.mm-slider__slide.is-cover .mm-slider__img {
+  object-fit: cover;
+}
+
+/* CTA under the 2-column row */
 .hero-cta {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .hero-cta__btn {
   width: 100%;
+  max-width: 520px;
 }
 
+/* One-screen hero on mobile: constrain About card height and clamp text */
 @media (max-width: 900px) {
   .maintenance-card--about {
-    max-height: calc(100svh - var(--header-h) - 24px);
+    max-height: calc(100svh - var(--header-h) - 18px);
   }
-  .maintenance-title {
-    font-size: 22px;
+
+  .about-content .maintenance-title {
+    font-size: 21px;
     margin-bottom: 10px;
   }
+
   .about-content .maintenance-text {
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.45;
   }
-  /* clamp two paragraphs to keep hero within one screen */
-  #mm-about1, #mm-about2 {
+
+  /* Clamp paragraphs to keep CTA visible in the first screen */
+  #mm-about1 { 
     display: -webkit-box;
     -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
     overflow: hidden;
   }
-  #mm-about1 {
-    -webkit-line-clamp: 3;
+  #mm-about2 { 
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
   }
-  #mm-about2 {
-    -webkit-line-clamp: 3;
-  }
-  .chips {
-    gap: 8px;
-  }
-  .chip {
-    padding: 7px 10px;
-    font-size: 12px;
-  }
-  .mm-slider__btn {
-    opacity: 0.9;
-  }
+
+  .chips { gap: 8px; margin-top: 10px; }
+  .chip { padding: 6px 9px; font-size: 11px; }
+}
+
+/* Hide slider arrows on touch devices (users swipe); keep dots */
+@media (hover: none) and (pointer: coarse) {
+  .mm-slider__btn { display: none; }
 }
