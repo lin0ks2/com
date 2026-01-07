@@ -47,6 +47,8 @@
     <section class="section">
       <div class="container">
         <div class="placeholder-stack">
+          <!-- Hero fold (1 screen): About + Start button -->
+          <div class="hero-fold">
           <!-- Block 1: About -->
           <article class="maintenance-card maintenance-card--about">
             <div class="about-grid">
@@ -54,30 +56,31 @@
                 <div class="mm-slider" data-slider="moyamova">
                   <div class="mm-slider__viewport">
                     <div class="mm-slider__track">
-                      <div class="mm-slider__slide">
-                        <img class="mm-slider__img" src="./img/screen/slider/01-poster.jpeg" alt="MOYAMOVA — учи німецьку легко (постер)" loading="lazy" />
-                      </div>
-                      <div class="mm-slider__slide">
-                        <img class="mm-slider__img" src="./img/screen/slider/02-dictionaries.jpeg" alt="Словники: частини мови та запуск тренування" loading="lazy" />
-                      </div>
-                      <div class="mm-slider__slide">
-                        <img class="mm-slider__img" src="./img/screen/slider/03-trainer-synonyms.jpeg" alt="Тренування слів із синонімами та вибором перекладу" loading="lazy" />
-                      </div>
-                      <div class="mm-slider__slide">
-                        <img class="mm-slider__img" src="./img/screen/slider/04-articles.jpeg" alt="Тренування артиклів у німецькій" loading="lazy" />
-                      </div>
-                      <div class="mm-slider__slide">
-                        <img class="mm-slider__img" src="./img/screen/slider/05-stats-main.jpeg" alt="Статистика прогресу за основними частинами мови" loading="lazy" />
-                      </div>
-                      <div class="mm-slider__slide">
-                        <img class="mm-slider__img" src="./img/screen/slider/06-stats-other.jpeg" alt="Статистика прогресу за іншими частинами мови" loading="lazy" />
-                      </div>
-                      <div class="mm-slider__slide">
-                        <img class="mm-slider__img" src="./img/screen/slider/07-english.jpeg" alt="Тренування англійських слів із прикладами" loading="lazy" />
-                      </div>
-                      <div class="mm-slider__slide">
-                        <img class="mm-slider__img" src="./img/screen/slider/08-dark-mode.jpeg" alt="Темна тема інтерфейсу" loading="lazy" />
-                      </div>
+  <div class="mm-slider__slide">
+    <img class="mm-slider__img mm-slider__img--poster" src="./img/screen/slider/01-poster.jpeg" alt="MOYAMOVA — вчи німецьку легко або англійську (постер)" loading="lazy" />
+  </div>
+  <div class="mm-slider__slide">
+    <img class="mm-slider__img" src="./img/screen/slider/03-trainer-synonyms.jpeg" alt="Тренування слів: вибір перекладу, зірки та синоніми" loading="lazy" />
+  </div>
+  <div class="mm-slider__slide">
+    <img class="mm-slider__img" src="./img/screen/slider/04-articles.jpeg" alt="Тренування артиклів у німецькій (der / die / das)" loading="lazy" />
+  </div>
+  <div class="mm-slider__slide">
+    <img class="mm-slider__img" src="./img/screen/slider/02-dictionaries.jpeg" alt="Словники за частинами мови та запуск тренування" loading="lazy" />
+  </div>
+  <div class="mm-slider__slide">
+    <img class="mm-slider__img" src="./img/screen/slider/05-stats-main.jpeg" alt="Статистика прогресу за основними частинами мови" loading="lazy" />
+  </div>
+  <div class="mm-slider__slide">
+    <img class="mm-slider__img" src="./img/screen/slider/06-stats-other.jpeg" alt="Статистика прогресу за іншими частинами мови" loading="lazy" />
+  </div>
+  <div class="mm-slider__slide">
+    <img class="mm-slider__img" src="./img/screen/slider/07-english.jpeg" alt="Тренування англійських слів із прикладами" loading="lazy" />
+  </div>
+  <div class="mm-slider__slide">
+    <img class="mm-slider__img" src="./img/screen/slider/08-dark-mode.jpeg" alt="Темна тема інтерфейсу" loading="lazy" />
+  </div>
+</div></div>
                     </div>
                   </div>
 
@@ -107,16 +110,28 @@
                 </div>
               </div>
             </div>
-            <div class="hero-cta">
+          </article>
+
+          <!-- Block 3: Start (compact, stays in first screen) -->
+          <article class="maintenance-card maintenance-card--alt maintenance-card--start">
+            <div class="start-row">
+              <div class="start-copy">
+                <h2 class="maintenance-subtitle-title" id="mm-startTitle"></h2>
+                <p class="maintenance-text" id="mm-startText"></p>
+              </div>
+
               <a href="https://moyamova.online/"
-                 class="btn btn-primary hero-cta__btn"
+                 class="btn btn-primary maintenance-cta"
                  data-role="start-trainer"
                  id="mm-startBtn"></a>
             </div>
 
+            <p class="maintenance-note" id="mm-startNote"></p>
           </article>
 
-<!-- Block 2: Feedback / Beta -->
+          </div>
+
+          <!-- Block 2: Feedback / Beta -->
           <article class="maintenance-card maintenance-card--alt">
             <h2 class="maintenance-subtitle-title" id="mm-betaTitle"></h2>
             <p class="maintenance-text" id="mm-beta1"></p>
