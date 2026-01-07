@@ -218,6 +218,20 @@ main {
   margin: 0 auto;
 }
 
+/* ===== Hero fold: first screen (About + Start button) ===== */
+.hero-fold {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 14px;
+}
+
+@media (max-width: 600px) {
+  /* iOS Safari friendly: keep the first fold within the viewport */
+  .hero-fold {
+    height: calc(100svh - 64px - 18px - 18px);
+  }
+}
+
 /* ===== About block: 2-column layout with slider ===== */
 .maintenance-card--about {
   padding: 22px;
@@ -225,9 +239,185 @@ main {
 
 .about-grid {
   display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
-  gap: 16px;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  align-items: center;
+}
+
+/* Let the slider and text have the same height inside the first fold */
+.maintenance-card--about {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-fold .maintenance-card--about {
+  min-height: 0;
+}
+
+.hero-fold .about-grid {
+  flex: 1;
+  min-height: 0;
   align-items: stretch;
+}
+
+.hero-fold .about-media,
+.hero-fold .mm-slider,
+.hero-fold .mm-slider__viewport,
+.hero-fold .mm-slider__track,
+.hero-fold .mm-slider__slide {
+  height: 100%;
+}
+
+.hero-fold .mm-slider__img {
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Poster should fill the left column without huge empty margins */
+.hero-fold .mm-slider__img--poster {
+  object-fit: cover;
+}
+
+/* Keep the two columns even on mobile (as requested) */
+@media (max-width: 600px) {
+  .hero-fold .about-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .hero-fold .maintenance-title {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .hero-fold .maintenance-text {
+    font-size: 13px;
+    line-height: 1.45;
+    margin-bottom: 10px;
+  }
+
+  .hero-fold .chips {
+    margin-top: 10px;
+    gap: 6px;
+  }
+
+  .hero-fold .chip {
+    font-size: 11px;
+    padding: 5px 8px;
+  }
+}
+
+/* Start card inside the first fold: text left, button right */
+.maintenance-card--start {
+  padding: 16px 16px 14px;
+}
+
+.start-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+}
+
+.start-row .maintenance-cta {
+  width: auto;
+  margin: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .maintenance-card--start {
+    padding: 14px 16px 12px;
+  }
+
+  .start-row {
+    grid-template-columns: 1fr;
+  }
+
+  .start-row .maintenance-cta {
+    width: 100%;
+  }
+
+  /* Keep the first screen clean: title + button; long explanation stays below the fold */
+  #mm-startText,
+  #mm-startNote {
+    display: none;
+  }
+}
+
+.hero-fold .mm-slider__img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.hero-fold .mm-slider__img--poster {
+  object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  /* Force 2 columns on mobile for the first fold */
+  .hero-fold .about-grid {
+    grid-template-columns: 1fr 1.25fr;
+    gap: 14px;
+  }
+
+  /* Compact typography so the full text fits */
+  .hero-fold .maintenance-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .hero-fold .maintenance-text {
+    font-size: 13px;
+    line-height: 1.42;
+  }
+  .hero-fold .chips {
+    gap: 6px;
+    margin-top: 10px;
+  }
+  .hero-fold .chip {
+    font-size: 11px;
+    padding: 5px 9px;
+  }
+}
+
+/* ===== Start button card (inside first fold) ===== */
+.maintenance-card--start {
+  padding-top: 16px;
+  padding-bottom: 14px;
+}
+
+.start-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  align-items: center;
+}
+
+@media (min-width: 601px) {
+  .start-row {
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 14px;
+  }
+  .maintenance-card--start .maintenance-cta {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .maintenance-card--start .maintenance-subtitle-title {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+  .maintenance-card--start .maintenance-text {
+    font-size: 12.5px;
+    line-height: 1.4;
+  }
+  .maintenance-card--start .maintenance-cta {
+    margin: 0;
+    padding: 12px 18px;
+  }
 }
 
 @media (min-width: 900px) {
@@ -704,8 +894,11 @@ body.page {
     }
 
     @media (max-width: 600px) {
-  .section { padding: 12px 0 18px; }
-.maintenance-card {
+      .section {
+        padding: 52px 0;
+      }
+
+      .maintenance-card {
         padding: 20px 16px 16px;
       }
 
@@ -720,120 +913,3 @@ body.page {
 
 /* Fix: keep CTA buttons centered on wide/landscape */
 .maintenance-cta{display:flex !important; justify-content:center; align-items:center; margin-left:auto !important; margin-right:auto !important;}
-
-
-/* ===== Hero (About) layout: keep 2 columns even on mobile, make slider height follow text ===== */
-:root {
-  /* Sticky header height approximation (used for 1-screen hero on mobile Safari) */
-  --header-h: 64px;
-}
-
-/* About card: slider/text row + CTA row */
-.maintenance-card--about {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-/* Two columns always (desktop and mobile) */
-.about-grid {
-  display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
-  gap: 16px;
-  align-items: stretch; /* make left media column match right content height */
-  min-height: 0;
-}
-
-@media (max-width: 900px) {
-  .about-grid {
-    grid-template-columns: 0.90fr 1.10fr;
-    gap: 12px;
-  }
-}
-
-@media (max-width: 420px) {
-  .about-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-}
-
-.about-media,
-.about-content {
-  min-height: 0;
-}
-
-.about-media {
-  display: flex;
-}
-
-/* Slider takes full height of its column (defined by right column text height) */
-.about-media .mm-slider,
-.about-media .mm-slider__viewport,
-.about-media .mm-slider__track,
-.about-media .mm-slider__slide {
-  height: 100%;
-}
-
-/* Default: keep screenshots fully visible */
-.mm-slider__img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-/* Poster: fill the frame (avoid tiny poster with huge empty margins) */
-.mm-slider__slide.is-cover .mm-slider__img {
-  object-fit: cover;
-}
-
-/* CTA under the 2-column row */
-.hero-cta {
-  display: flex;
-  justify-content: center;
-}
-
-.hero-cta__btn {
-  width: 100%;
-  max-width: 520px;
-}
-
-/* One-screen hero on mobile: constrain About card height and clamp text */
-@media (max-width: 900px) {
-  .maintenance-card--about {
-    max-height: calc(100svh - var(--header-h) - 18px);
-  }
-
-  .about-content .maintenance-title {
-    font-size: 21px;
-    margin-bottom: 10px;
-  }
-
-  .about-content .maintenance-text {
-    font-size: 13px;
-    line-height: 1.45;
-  }
-
-  /* Clamp paragraphs to keep CTA visible in the first screen */
-  #mm-about1 { 
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    overflow: hidden;
-  }
-  #mm-about2 { 
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
-  }
-
-  .chips { gap: 8px; margin-top: 10px; }
-  .chip { padding: 6px 9px; font-size: 11px; }
-}
-
-/* Hide slider arrows on touch devices (users swipe); keep dots */
-@media (hover: none) and (pointer: coarse) {
-  .mm-slider__btn { display: none; }
-}
