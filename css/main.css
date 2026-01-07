@@ -225,8 +225,9 @@ main {
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 18px;
+  /* Requirement: always 2 columns (including mobile) */
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 14px;
   align-items: center;
 }
 
@@ -234,6 +235,69 @@ main {
   .about-grid {
     grid-template-columns: 0.95fr 1.05fr;
     gap: 22px;
+  }
+}
+
+/* Hero fit: keep the first (about) block within one viewport height */
+@media (max-width: 900px) {
+  .maintenance-card--about {
+    /* 100svh behaves better on mobile Safari than 100vh */
+    min-height: calc(100svh - 86px);
+    max-height: calc(100svh - 86px);
+    padding: 14px;
+    overflow: hidden;
+  }
+
+  .about-grid {
+    height: 100%;
+    align-items: stretch;
+  }
+
+  .about-media,
+  .mm-slider,
+  .mm-slider__viewport,
+  .mm-slider__track,
+  .mm-slider__slide {
+    height: 100%;
+  }
+
+  .mm-slider__img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  /* Compact typography to prevent overflow on small screens */
+  .about-content .maintenance-title {
+    font-size: 22px;
+    line-height: 1.12;
+    margin-bottom: 10px;
+  }
+
+  .about-content .maintenance-text {
+    font-size: 14px;
+    line-height: 1.35;
+    margin-bottom: 10px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+  }
+
+  .chips {
+    gap: 8px;
+  }
+
+  .chip {
+    font-size: 12px;
+    padding: 7px 10px;
+  }
+
+  /* Reduce slider controls footprint on mobile */
+  .mm-slider__btn {
+    width: 32px;
+    height: 32px;
   }
 }
 
