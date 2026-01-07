@@ -2,27 +2,31 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8" />
-  <title>MOYAMOVA — офлайн тренажёр слов (немецкий и английский A1–B2)</title>
+  <title>MOYAMOVA — офлайн-тренажёр слов: немецкий и английский без рекламы</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#070816" />
   <meta name="robots" content="index,follow" />
-  <meta name="keywords" content="немецкий, английский, слова, словарь, тренажёр, A1, A2, B1, B2, учить слова, офлайн" />
+  <meta name="keywords" content="немецкий, английский, слова, словарь, тренажёр, учить слова, карточки слов, офлайн, без рекламы" />
 
-  <meta name="description" content="MOYAMOVA — офлайн‑приложение для запоминания иностранных слов: немецкий и английский, 2500+ слов уровней A1–B2. Бесплатно, без рекламы, без регистрации и без сбора данных." id="meta-description" />
+  <meta name="description" content="Многоязыковой офлайн-тренажёр слов: немецкий и английский. 2500+ слов для каждого языка, без регистрации и рекламы. Все данные хранятся на устройстве." id="meta-description" />
 
   <link rel="canonical" href="https://moyamova.com/" />
+  <link rel="alternate" hreflang="ru" href="https://moyamova.com/?lang=ru" />
+  <link rel="alternate" hreflang="uk" href="https://moyamova.com/?lang=uk" />
+  <link rel="alternate" hreflang="en" href="https://moyamova.com/?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="https://moyamova.com/" />
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://moyamova.com/" id="meta-og-url" />
-  <meta property="og:title" content="MOYAMOVA — офлайн тренажёр слов" id="meta-og-title" />
-  <meta property="og:description" content="Немецкий и английский • 2500+ слов A1–B2 • бесплатно • офлайн • без рекламы и без сбора данных." id="meta-og-description" />
+  <meta property="og:title" content="MOYAMOVA — офлайн-тренажёр слов" id="meta-og-title" />
+  <meta property="og:description" content="Немецкий и английский • 2500+ слов на язык • офлайн • без рекламы • данные на устройстве." id="meta-og-description" />
   <meta property="og:image" content="./img/og-cover.png" />
   <meta property="og:image:alt" content="MOYAMOVA — тренажёр слов" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="MOYAMOVA — офлайн тренажёр слов" id="meta-twitter-title" />
-  <meta name="twitter:description" content="Немецкий и английский • 2500+ слов A1–B2 • бесплатно • офлайн • без рекламы и без сбора данных." id="meta-twitter-description" />
+  <meta name="twitter:title" content="MOYAMOVA — офлайн-тренажёр слов" id="meta-twitter-title" />
+  <meta name="twitter:description" content="Немецкий и английский • 2500+ слов на язык • офлайн • без рекламы • данные на устройстве." id="meta-twitter-description" />
   <meta name="twitter:image" content="./img/og-cover.png" />
 
   <link rel="icon" type="image/jpeg" href="./favicon.jpeg" />
@@ -39,6 +43,7 @@
       <div class="lang-switch" aria-label="Language switcher">
 <button class="lang-btn is-active" data-lang="ru" type="button">RU</button>
         <button class="lang-btn" data-lang="uk" type="button">UA</button>
+        <button class="lang-btn" data-lang="en" type="button">EN</button>
       </div>
     </div>
   </header>
@@ -155,22 +160,18 @@
 
       const messages = {
         ru: {
-          title: 'MOYAMOVA — тренажёр иностранных слов',
-          about1: 'MOYAMOVA — простое приложение для запоминания иностранных слов. Сейчас доступны тренировки по немецкому и английскому на основе словарей из 2500+ слов уровней A1–B2.',
-          about2: 'Приложение бесплатное, не содержит рекламы, не собирает данные и работает офлайн. Проект развивается постепенно — обратная связь пользователей напрямую влияет на то, каким он станет дальше.',
-          shotLightCap: 'Светлая тема',
-          shotDarkCap: 'Тёмная тема',
-          shotLightCap: 'Світла тема',
-          shotDarkCap: 'Темна тема',
-          chips: ['DE / EN', '2500+ слов', 'A1–B2', 'Бесплатно', 'Офлайн', 'Без сбора данных'],
+          title: 'MOYAMOVA — офлайн-тренажёр слов для немецкого и английского',
+          about1: 'MOYAMOVA — это многоязыковой офлайн‑тренажёр для изучения слов. Сейчас доступны тренировки по немецкому и английскому.',
+          about2: 'В каждом языке — 2500+ слов. Приложение бесплатное, без рекламы и регистрации, работает полностью офлайн — все данные хранятся только на вашем устройстве.',
+          chips: ['DE / EN', '2500+ слов/язык', 'Без рекламы', 'Без регистрации', 'Офлайн', 'Данные на устройстве'],
 
           startTitle: 'Запустить тренажёр',
-          startText: 'Приложение находится в ранней версии: словари, упражнения и интерфейс постепенно дорабатываются. Оно полностью бесплатное, без рекламы, не собирает данные и работает офлайн.',
+          startText: 'Приложение в ранней версии: словари, упражнения и интерфейс постепенно улучшаются. Оно полностью бесплатное, без рекламы, не требует аккаунта и работает офлайн.',
           startBtn: 'Запустить тренажёр',
-          startNote: 'Если окно не открылось, проверьте блокировщик всплывающих окон или попробуйте другой браузер. Его можно добавить на главный экран телефона и пользоваться как обычным приложением.',
+          startNote: 'Если окно не открылось, проверьте блокировщик всплывающих окон или попробуйте другой браузер. Можно добавить сайт на главный экран телефона и пользоваться как приложением.',
 
           betaTitle: 'Поддержка и закрытый бета‑тест',
-          beta1: 'Если вы готовы помочь проекту, буду благодарен за короткую обратную связь: что удобно, что мешает, где встречаются ошибки в словарях и какие тренировки стоит добавить.',
+          beta1: 'Если вы готовы помочь проекту, буду благодарен за короткую обратную связь: что удобно, что мешает, где встречаются ошибки и какие тренировки стоит добавить.',
           beta2: 'Для обсуждений и поддержки есть Viber‑группа. Там же проходит закрытый бета‑тест перед релизом в маркет.',
           viberBtn: 'Вступить в Viber‑группу',
           betaNote: 'Ссылка откроется в Viber.',
@@ -180,27 +181,27 @@
           footerImpressum: 'Импрессум',
           footerSupport: '',
 
-          metaTitle: 'MOYAMOVA — офлайн тренажёр слов (немецкий и английский A1–B2)',
-          metaDescription: 'MOYAMOVA — офлайн‑приложение для запоминания иностранных слов: немецкий и английский, 2500+ слов уровней A1–B2. Бесплатно, без рекламы, без регистрации и без сбора данных.',
-          ogTitle: 'MOYAMOVA — офлайн тренажёр слов',
-          ogDescription: 'Немецкий и английский • 2500+ слов A1–B2 • бесплатно • офлайн • без рекламы и без сбора данных.',
+          metaTitle: 'MOYAMOVA — офлайн-тренажёр слов: немецкий и английский без рекламы',
+          metaDescription: 'Многоязыковой офлайн-тренажёр слов: немецкий и английский. 2500+ слов для каждого языка, без регистрации и рекламы. Все данные хранятся на устройстве.',
+          ogTitle: 'MOYAMOVA — офлайн-тренажёр слов',
+          ogDescription: 'Немецкий и английский • 2500+ слов на язык • офлайн • без рекламы • данные на устройстве.',
 
           htmlLang: 'ru',
           legalSuffix: 'ru'
         },
         uk: {
-          title: 'MOYAMOVA — тренажер іноземних слів',
-          about1: 'MOYAMOVA — простий застосунок для запам’ятовування іноземних слів. Зараз доступні тренування з німецької та англійської на основі словників із 2500+ слів рівнів A1–B2.',
-          about2: 'Застосунок безкоштовний, без реклами, не збирає дані та працює офлайн. Проєкт розвивається поступово — ваш фідбек напряму впливає на те, яким він стане далі.',
-          chips: ['DE / EN', '2500+ слів', 'A1–B2', 'Безкоштовно', 'Офлайн', 'Без збору даних'],
+          title: 'MOYAMOVA — офлайн-тренажер слів для німецької та англійської',
+          about1: 'MOYAMOVA — це багатомовний офлайн‑тренажер для вивчення слів. Зараз доступні тренування з німецької та англійської.',
+          about2: 'У кожній мові — 2500+ слів. Застосунок безкоштовний, без реклами й реєстрації, працює повністю офлайн — усі дані зберігаються лише на вашому пристрої.',
+          chips: ['DE / EN', '2500+ слів/мова', 'Без реклами', 'Без реєстрації', 'Офлайн', 'Дані на пристрої'],
 
           startTitle: 'Запустити тренажер',
-          startText: 'Застосунок у ранній версії: словники, вправи та інтерфейс поступово допрацьовуються. Він повністю безкоштовний, без реклами, не збирає дані та працює офлайн.',
+          startText: 'Застосунок у ранній версії: словники, вправи та інтерфейс поступово покращуються. Він безкоштовний, без реклами, не потребує акаунта та працює офлайн.',
           startBtn: 'Запустити тренажер',
-          startNote: 'Якщо вікно не відкрилось, перевірте блокування спливаючих вікон або спробуйте інший браузер. Його можна додати на головний екран телефону та користуватися як звичайним застосунком.',
+          startNote: 'Якщо вікно не відкрилось, перевірте блокування спливаючих вікон або спробуйте інший браузер. Сайт можна додати на головний екран телефона та користуватися як застосунком.',
 
           betaTitle: 'Підтримка та закритий бета‑тест',
-          beta1: 'Якщо ви готові допомогти проєкту, буду вдячний за короткий фідбек: що зручно, що заважає, де трапляються помилки у словниках і які тренування варто додати.',
+          beta1: 'Якщо ви готові допомогти проєкту, буду вдячний за короткий фідбек: що зручно, що заважає, де трапляються помилки та які тренування варто додати.',
           beta2: 'Для обговорення та підтримки є Viber‑група. Там же проходить закритий бета‑тест перед релізом у маркет.',
           viberBtn: 'Приєднатися у Viber',
           betaNote: 'Посилання відкриється у Viber.',
@@ -210,13 +211,43 @@
           footerImpressum: 'Імпресум',
           footerSupport: '',
 
-          metaTitle: 'MOYAMOVA — офлайн тренажер слів (німецька та англійська A1–B2)',
-          metaDescription: 'MOYAMOVA — офлайн‑застосунок для запам’ятовування іноземних слів: німецька та англійська, 2500+ слів рівнів A1–B2. Безкоштовно, без реклами, без реєстрації та без збору даних.',
-          ogTitle: 'MOYAMOVA — офлайн тренажер слів',
-          ogDescription: 'Німецька та англійська • 2500+ слів A1–B2 • безкоштовно • офлайн • без реклами та без збору даних.',
+          metaTitle: 'MOYAMOVA — офлайн-тренажер слів: німецька та англійська без реклами',
+          metaDescription: 'Багатомовний офлайн-тренажер слів: німецька та англійська. 2500+ слів для кожної мови, без реєстрації та реклами.',
+          ogTitle: 'MOYAMOVA — офлайн-тренажер слів',
+          ogDescription: 'Німецька та англійська • 2500+ слів на мову • офлайн • без реклами • дані на пристрої.',
 
           htmlLang: 'uk',
           legalSuffix: 'uk'
+        },
+        en: {
+          title: 'MOYAMOVA — Offline Vocabulary Trainer for German and English',
+          about1: 'MOYAMOVA is a multilingual offline vocabulary trainer. Practice German and English with flashcards and smart repetition.',
+          about2: '2500+ words per language. Free, no ads, no accounts, works fully offline — your data stays on your device.',
+          chips: ['DE / EN', '2500+ words/language', 'No ads', 'No accounts', 'Offline', 'On‑device data'],
+
+          startTitle: 'Open trainer',
+          startText: 'This is an early version: dictionaries, exercises and UI are improving over time. It is free, has no ads, requires no account and works offline.',
+          startBtn: 'Open trainer',
+          startNote: 'If the window did not open, check your pop‑up blocker or try another browser. You can add the site to your phone’s home screen and use it like an app.',
+
+          betaTitle: 'Support and closed beta',
+          beta1: 'If you would like to help the project, I would appreciate quick feedback: what feels good, what is confusing, where you notice mistakes and what training modes you want next.',
+          beta2: 'There is a Viber group for discussion and support. A closed beta is also run there before the store release.',
+          viberBtn: 'Join the Viber group',
+          betaNote: 'The link will open in Viber.',
+
+          footerPrivacy: 'Privacy Policy',
+          footerTerms: 'Terms of Use',
+          footerImpressum: 'Imprint',
+          footerSupport: '',
+
+          metaTitle: 'MOYAMOVA — Offline Vocabulary Trainer for German & English',
+          metaDescription: 'Multilingual offline vocabulary trainer for German and English. 2500+ words per language. No ads, no accounts, no tracking.',
+          ogTitle: 'MOYAMOVA — Offline Vocabulary Trainer',
+          ogDescription: 'German & English • 2500+ words per language • offline • no ads • on‑device data',
+
+          htmlLang: 'en',
+          legalSuffix: 'en'
         }
       };
 
@@ -226,11 +257,20 @@
           if (stored && messages[stored]) return stored;
         } catch (e) {}
 
+
+        // URL param overrides (useful for sharing and indexing): ?lang=ru|uk|en
+        try {
+          const qp = new URLSearchParams(window.location.search);
+          const ql = (qp.get('lang') || '').toLowerCase().slice(0, 2);
+          if (ql && messages[ql]) return ql;
+        } catch (e) {}
+
         const navLang = (navigator.language || (navigator.languages && navigator.languages[0]) || 'ru')
           .toLowerCase()
           .slice(0, 2);
 
         if (navLang === 'uk') return 'uk';
+        if (navLang === 'en') return 'en';
         return 'ru';
       }
 
@@ -243,7 +283,7 @@
         // hero poster (per language)
         const heroPoster = document.getElementById('mm-heroPoster');
         if (heroPoster) {
-          heroPoster.src = (lang === 'uk') ? './img/hero/poster-uk.jpeg' : './img/hero/poster-ru.jpeg';
+          heroPoster.src = (lang === 'uk') ? './img/hero/poster-uk.jpeg' : './img/hero/poster-ru.jpeg'; // EN uses RU poster until an EN poster is added
           heroPoster.alt = dict.title;
         }
 
@@ -319,6 +359,11 @@ const buttons = document.querySelectorAll('.lang-btn');
           if (!lang || !(lang in messages)) return;
           try { localStorage.setItem(LANG_STORAGE_KEY, lang); } catch (e) {}
           currentLang = lang;
+          try {
+            const url = new URL(window.location.href);
+            url.searchParams.set('lang', lang);
+            window.history.replaceState({}, '', url.toString());
+          } catch (e) {}
           applyLang(currentLang);
         });
       }
