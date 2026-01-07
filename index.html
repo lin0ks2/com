@@ -44,94 +44,40 @@
   </header>
 
   <main>
+    <!-- 1) Full-screen poster (clickable) -->
+    <section class="hero-poster" aria-label="MOYAMOVA poster">
+      <a class="hero-poster__link" href="https://moyamova.online/" data-role="start-trainer" aria-label="Запустить тренажёр">
+        <img class="hero-poster__img" id="mm-heroPoster" src="./img/hero/poster-ru.jpeg" alt="MOYAMOVA — постер" loading="eager" />
+      </a>
+    </section>
+
     <section class="section">
       <div class="container">
         <div class="placeholder-stack">
-          <!-- Hero fold (1 screen): About + Start button -->
-          <div class="hero-fold">
-          <!-- Block 1: About -->
+          <!-- 2) About + Start button -->
           <article class="maintenance-card maintenance-card--about">
-            <div class="about-grid">
-              <div class="about-media" aria-label="Скриншоты приложения">
-                <div class="mm-slider" data-slider="moyamova">
-                  <div class="mm-slider__viewport">
-                    <div class="mm-slider__track">
-  <div class="mm-slider__slide">
-    <img class="mm-slider__img mm-slider__img--poster" src="./img/screen/slider/01-poster.jpeg" alt="MOYAMOVA — вчи німецьку легко або англійську (постер)" loading="lazy" />
-  </div>
-  <div class="mm-slider__slide">
-    <img class="mm-slider__img" src="./img/screen/slider/03-trainer-synonyms.jpeg" alt="Тренування слів: вибір перекладу, зірки та синоніми" loading="lazy" />
-  </div>
-  <div class="mm-slider__slide">
-    <img class="mm-slider__img" src="./img/screen/slider/04-articles.jpeg" alt="Тренування артиклів у німецькій (der / die / das)" loading="lazy" />
-  </div>
-  <div class="mm-slider__slide">
-    <img class="mm-slider__img" src="./img/screen/slider/02-dictionaries.jpeg" alt="Словники за частинами мови та запуск тренування" loading="lazy" />
-  </div>
-  <div class="mm-slider__slide">
-    <img class="mm-slider__img" src="./img/screen/slider/05-stats-main.jpeg" alt="Статистика прогресу за основними частинами мови" loading="lazy" />
-  </div>
-  <div class="mm-slider__slide">
-    <img class="mm-slider__img" src="./img/screen/slider/06-stats-other.jpeg" alt="Статистика прогресу за іншими частинами мови" loading="lazy" />
-  </div>
-  <div class="mm-slider__slide">
-    <img class="mm-slider__img" src="./img/screen/slider/07-english.jpeg" alt="Тренування англійських слів із прикладами" loading="lazy" />
-  </div>
-  <div class="mm-slider__slide">
-    <img class="mm-slider__img" src="./img/screen/slider/08-dark-mode.jpeg" alt="Темна тема інтерфейсу" loading="lazy" />
-  </div>
-</div></div>
-                    </div>
-                  </div>
+            <h1 class="maintenance-title" id="mm-title"></h1>
+            <p class="maintenance-text" id="mm-about1"></p>
+            <p class="maintenance-text" id="mm-about2"></p>
 
-                  <button class="mm-slider__btn mm-slider__btn--prev" type="button" aria-label="Попередній слайд">
-                    <span aria-hidden="true">‹</span>
-                  </button>
-                  <button class="mm-slider__btn mm-slider__btn--next" type="button" aria-label="Наступний слайд">
-                    <span aria-hidden="true">›</span>
-                  </button>
-
-                  <div class="mm-slider__dots" aria-label="Перемикач слайдів"></div>
-                </div>
-              </div>
-
-              <div class="about-content">
-                <h1 class="maintenance-title" id="mm-title"></h1>
-                <p class="maintenance-text" id="mm-about1"></p>
-                <p class="maintenance-text" id="mm-about2"></p>
-
-                <div class="chips" aria-label="Key points">
-                  <span class="chip" id="chip1"></span>
-                  <span class="chip" id="chip2"></span>
-                  <span class="chip" id="chip3"></span>
-                  <span class="chip" id="chip4"></span>
-                  <span class="chip" id="chip5"></span>
-                  <span class="chip" id="chip6"></span>
-                </div>
-              </div>
+            <div class="chips" aria-label="Key points">
+              <span class="chip" id="chip1"></span>
+              <span class="chip" id="chip2"></span>
+              <span class="chip" id="chip3"></span>
+              <span class="chip" id="chip4"></span>
+              <span class="chip" id="chip5"></span>
+              <span class="chip" id="chip6"></span>
             </div>
-          </article>
 
-          <!-- Block 3: Start (compact, stays in first screen) -->
-          <article class="maintenance-card maintenance-card--alt maintenance-card--start">
-            <div class="start-row">
-              <div class="start-copy">
-                <h2 class="maintenance-subtitle-title" id="mm-startTitle"></h2>
-                <p class="maintenance-text" id="mm-startText"></p>
-              </div>
-
+            <div class="hero-cta hero-cta--full">
               <a href="https://moyamova.online/"
-                 class="btn btn-primary maintenance-cta"
+                 class="btn btn-primary hero-cta__btn"
                  data-role="start-trainer"
                  id="mm-startBtn"></a>
             </div>
-
-            <p class="maintenance-note" id="mm-startNote"></p>
           </article>
 
-          </div>
-
-          <!-- Block 2: Feedback / Beta -->
+          <!-- 3) Feedback / Beta -->
           <article class="maintenance-card maintenance-card--alt">
             <h2 class="maintenance-subtitle-title" id="mm-betaTitle"></h2>
             <p class="maintenance-text" id="mm-beta1"></p>
@@ -145,6 +91,39 @@
             </a>
 
             <p class="maintenance-note" id="mm-betaNote"></p>
+          </article>
+
+          <!-- 4) UI screenshots slider (no arrows, autoplay) -->
+          <article class="maintenance-card maintenance-card--about" aria-label="Скриншоты интерфейса">
+            <div class="mm-slider mm-slider--screens" data-slider="moyamova-screens" data-autoplay="2000">
+              <div class="mm-slider__viewport">
+                <div class="mm-slider__track">
+                  <div class="mm-slider__slide">
+                    <img class="mm-slider__img" src="./img/screen/slider/02-dictionaries.jpeg" alt="Словники за частинами мови та запуск тренування" loading="lazy" />
+                  </div>
+                  <div class="mm-slider__slide">
+                    <img class="mm-slider__img" src="./img/screen/slider/03-trainer-synonyms.jpeg" alt="Тренування слів: вибір перекладу, зірки та синоніми" loading="lazy" />
+                  </div>
+                  <div class="mm-slider__slide">
+                    <img class="mm-slider__img" src="./img/screen/slider/04-articles.jpeg" alt="Тренування артиклів у німецькій (der / die / das)" loading="lazy" />
+                  </div>
+                  <div class="mm-slider__slide">
+                    <img class="mm-slider__img" src="./img/screen/slider/05-stats-main.jpeg" alt="Статистика прогресу за основними частинами мови" loading="lazy" />
+                  </div>
+                  <div class="mm-slider__slide">
+                    <img class="mm-slider__img" src="./img/screen/slider/06-stats-other.jpeg" alt="Статистика прогресу за іншими частинами мови" loading="lazy" />
+                  </div>
+                  <div class="mm-slider__slide">
+                    <img class="mm-slider__img" src="./img/screen/slider/08-dark-mode.jpeg" alt="Темна тема інтерфейсу" loading="lazy" />
+                  </div>
+                  <div class="mm-slider__slide">
+                    <img class="mm-slider__img" src="./img/screen/slider/07-english.jpeg" alt="Тренування англійських слів із прикладами" loading="lazy" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="mm-slider__dots" aria-label="Перемикач слайдів"></div>
+            </div>
           </article>
         </div>
       </div>
@@ -257,20 +236,16 @@
 
       function applyLang(lang) {
         const dict = messages[lang] || messages.ru;
-document.getElementById('mm-title').textContent = dict.title;
+        document.getElementById('mm-title').textContent = dict.title;
         document.getElementById('mm-about1').textContent = dict.about1;
         document.getElementById('mm-about2').textContent = dict.about2;
 
-        // screenshots
-        const lightImg = document.getElementById('mm-shot-light');
-        const darkImg  = document.getElementById('mm-shot-dark');
-        if (lightImg) lightImg.src = (lang === 'uk') ? './img/screens/uk-light.jpeg' : './img/screens/ru-light.jpeg';
-        if (darkImg)  darkImg.src  = (lang === 'uk') ? './img/screens/uk-dark.jpeg'  : './img/screens/ru-dark.jpeg';
-
-        const lightCap = document.getElementById('mm-shot-light-cap');
-        const darkCap  = document.getElementById('mm-shot-dark-cap');
-        if (lightCap) lightCap.textContent = dict.shotLightCap || '';
-        if (darkCap)  darkCap.textContent  = dict.shotDarkCap || '';
+        // hero poster (per language)
+        const heroPoster = document.getElementById('mm-heroPoster');
+        if (heroPoster) {
+          heroPoster.src = (lang === 'uk') ? './img/hero/poster-uk.jpeg' : './img/hero/poster-ru.jpeg';
+          heroPoster.alt = dict.title;
+        }
 
         const chipIds = ['chip1','chip2','chip3','chip4','chip5','chip6'];
         chipIds.forEach((id, idx) => {
@@ -286,10 +261,8 @@ document.getElementById('mm-title').textContent = dict.title;
         viberEl.href = VIBER_URL;
         document.getElementById('mm-betaNote').textContent = dict.betaNote;
 
-        document.getElementById('mm-startTitle').textContent = dict.startTitle;
-        document.getElementById('mm-startText').textContent = dict.startText;
+        // start CTA (button)
         document.getElementById('mm-startBtn').textContent = dict.startBtn;
-        document.getElementById('mm-startNote').textContent = dict.startNote;
 
         // footer legal links
         const privacy = document.getElementById('footer-privacy');
@@ -350,41 +323,44 @@ const buttons = document.querySelectorAll('.lang-btn');
         });
       }
 
-      // start trainer: same behaviour as previous заглушка
-      const startBtn = document.querySelector('[data-role="start-trainer"]');
-      if (startBtn) {
-        startBtn.addEventListener('click', function (e) {
-          e.preventDefault();
-          const targetUrl = startBtn.href;
+      // start trainer: poster click + button click (same behaviour)
+      function openTrainer(targetUrl) {
+        const isMobile =
+          /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
+          window.innerWidth < 768;
 
-          const isMobile =
-            /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
-            window.innerWidth < 768;
+        if (isMobile) {
+          window.location.href = targetUrl;
+          return;
+        }
 
-          if (isMobile) {
-            window.location.href = targetUrl;
-          } else {
-            const w = 430;
-            const h = 800;
-            const left = Math.round(window.screenX + (window.innerWidth - w) / 2);
-            const top = Math.round(window.screenY + (window.innerHeight - h) / 2);
+        const w = 430;
+        const h = 800;
+        const left = Math.round(window.screenX + (window.innerWidth - w) / 2);
+        const top = Math.round(window.screenY + (window.innerHeight - h) / 2);
 
-            window.open(
-              targetUrl,
-              'MOYAMOVATrainer',
-              'width=' +
-                w +
-                ',height=' +
-                h +
-                ',left=' +
-                left +
-                ',top=' +
-                top +
-                ',resizable=yes,scrollbars=yes,status=no'
-            );
-          }
-        });
+        window.open(
+          targetUrl,
+          'MOYAMOVATrainer',
+          'width=' +
+            w +
+            ',height=' +
+            h +
+            ',left=' +
+            left +
+            ',top=' +
+            top +
+            ',resizable=yes,scrollbars=yes,status=no'
+        );
       }
+
+      document.querySelectorAll('[data-role="start-trainer"]').forEach((el) => {
+        el.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetUrl = el.getAttribute('href') || 'https://moyamova.online/';
+          openTrainer(targetUrl);
+        });
+      });
     })();
   </script>
 </body>
