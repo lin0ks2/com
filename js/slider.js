@@ -1,0 +1,143 @@
+/* MOYAMOVA landing slider (no dependencies)
+ *
+ * Features:
+ *  - Prev/Next buttons
+ *  - Dots navigation
+ *  - Basic touch swipe
+ *  - Respects prefers-reduced-motion
+ */
+(function () {
+  'use strict';
+
+  function prefersReducedMotion() {
+    return Boolean(
+      window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    );
+  }
+
+  function clamp(n, min, max) {
+    return Math.max(min, Math.min(max, n));
+  }
+
+  function initSlider(root) {
+    const track = root.querySelector('.mm-slider__track');
+    const slides = Array.from(root.querySelectorAll('.mm-slider__slide'));
+    const prevBtn = root.querySelector('.mm-slider__btn--prev');
+    const nextBtn = root.querySelector('.mm-slider__btn--next');
+    const dotsWrap = root.querySelector('.mm-slider__dots');
+
+    if (!track || slides.length === 0) return;
+
+    let index = 0;
+    let startX = 0;
+    let deltaX = 0;
+    let isDragging = false;
+
+    // Build dots
+    const dots = slides.map((_, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'mm-slider__dot';
+      b.setAttribute('aria-label', 'Слайд ' + (i + 1));
+      b.addEventListener('click', () => goTo(i));
+      dotsWrap && dotsWrap.appendChild(b);
+      return b;
+    });
+
+    function update() {
+      const x = -index * 100;
+      if (prefersReducedMotion()) {
+        track.style.transitionDuration = '0ms';
+      }
+      track.style.transform = 'translate3d(' + x + '%, 0, 0)';
+
+      dots.forEach((d, i) => {
+        if (i === index) d.classList.add('is-active');
+        else d.classList.remove('is-active');
+      });
+
+      if (prevBtn) prevBtn.disabled = slides.length <= 1;
+      if (nextBtn) nextBtn.disabled = slides.length <= 1;
+    }
+
+    function goTo(i) {
+      index = clamp(i, 0, slides.length - 1);
+      update();
+    }
+
+    function next() {
+      index = (index + 1) % slides.length;
+      update();
+    }
+
+    function prev() {
+      index = (index - 1 + slides.length) % slides.length;
+      update();
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', prev);
+    if (nextBtn) nextBtn.addEventListener('click', next);
+
+    // Keyboard (only when focused inside)
+    root.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        prev();
+      }
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        next();
+      }
+    });
+
+    // Touch swipe
+    const viewport = root.querySelector('.mm-slider__viewport') || root;
+
+    viewport.addEventListener(
+      'touchstart',
+      (e) => {
+        if (!e.touches || e.touches.length !== 1) return;
+        isDragging = true;
+        startX = e.touches[0].clientX;
+        deltaX = 0;
+      },
+      { passive: true }
+    );
+
+    viewport.addEventListener(
+      'touchmove',
+      (e) => {
+        if (!isDragging || !e.touches || e.touches.length !== 1) return;
+        deltaX = e.touches[0].clientX - startX;
+      },
+      { passive: true }
+    );
+
+    viewport.addEventListener(
+      'touchend',
+      () => {
+        if (!isDragging) return;
+        isDragging = false;
+        const threshold = 40; // px
+        if (deltaX > threshold) prev();
+        else if (deltaX < -threshold) next();
+      },
+      { passive: true }
+    );
+
+    // Initial state
+    goTo(0);
+  }
+
+  function boot() {
+    document
+      .querySelectorAll('.mm-slider')
+      .forEach((slider) => initSlider(slider));
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+})();
