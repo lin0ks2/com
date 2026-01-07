@@ -1,28 +1,427 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="utf-8" />
-  <title>MOYAMOVA</title>
+  <title>MOYAMOVA — офлайн-тренажёр слов: немецкий и английский без рекламы</title>
+
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="robots" content="noindex,follow" />
-  <link rel="canonical" href="https://moyamova.com/ru/" />
-  <link rel="alternate" hreflang="ru" href="https://moyamova.com/ru/" />
-  <link rel="alternate" hreflang="uk" href="https://moyamova.com/uk/" />
-  <link rel="alternate" hreflang="en" href="https://moyamova.com/en/" />
-  <link rel="alternate" hreflang="x-default" href="https://moyamova.com/ru/" />
-  <meta http-equiv="refresh" content="0; url=./ru/" />
+  <meta name="theme-color" content="#070816" />
+  <meta name="robots" content="index,follow" />
+  <meta name="keywords" content="MOYAMOVA, тренажёр слов, учить слова, немецкий, английский, офлайн, без рекламы" />
+
+  <meta name="description" content="Многоязыковой офлайн-тренажёр слов: немецкий и английский. 2500+ слов для каждого языка, без регистрации и рекламы. Данные хранятся на устройстве." id="meta-description" />
+
+  <link rel="canonical" href="https://moyamova.com/" />
+
+  
+  <link rel="alternate" hreflang="ru" href="https://moyamova.com/?lang=ru" />
+  <link rel="alternate" hreflang="uk" href="https://moyamova.com/?lang=uk" />
+  <link rel="alternate" hreflang="en" href="https://moyamova.com/?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="https://moyamova.com/" />
+<meta property="og:type" content="website" />
+  <meta property="og:url" content="https://moyamova.com/" id="meta-og-url" />
+  <meta property="og:title" content="MOYAMOVA — офлайн-тренажёр слов" id="meta-og-title" />
+  <meta property="og:description" content="Немецкий и английский • 2500+ слов на язык • офлайн • бесплатно • без рекламы" id="meta-og-description" />
+  <meta property="og:image" content="./img/og-cover.png" />
+  <meta property="og:image:alt" content="MOYAMOVA — тренажёр слов" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MOYAMOVA — офлайн-тренажёр слов" id="meta-twitter-title" />
+  <meta name="twitter:description" content="Немецкий и английский • 2500+ слов на язык • офлайн • бесплатно • без рекламы" id="meta-twitter-description" />
+  <meta name="twitter:image" content="./img/og-cover.png" />
+
+  <script type="application/ld+json" id="mm-jsonld">{}</script>
+
+  <link rel="icon" type="image/jpeg" href="./favicon.jpeg" />
+  <link rel="stylesheet" href="./css/main.css" />
+
+  <script src="./ga.consent.js" defer></script>
+</head>
+<body class="page">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo" aria-label="MOYAMOVA">
+        <img src="./img/logo-icon.png" alt="MOYAMOVA logo" class="logo-img" />
+        <span class="logo-text">MOYAMOVA</span>
+      </a>
+
+      <div class="lang-switch" aria-label="Language switcher">
+        <button class="lang-btn is-active" data-lang="ru" type="button">RU</button>
+        <button class="lang-btn" data-lang="uk" type="button">UA</button>
+        <button class="lang-btn" data-lang="en" type="button">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1) Full-screen poster (clickable) -->
+    <section class="hero-poster" aria-label="MOYAMOVA poster">
+      <a class="hero-poster__link" href="https://moyamova.online/" data-role="start-trainer" aria-label="Запустить тренажёр">
+        <img class="hero-poster__img" id="mm-heroPoster" src="./img/hero/poster-ru.jpeg" alt="MOYAMOVA — постер" loading="eager" />
+      </a>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="placeholder-stack">
+          <!-- 2) About + Start button -->
+          <article class="maintenance-card maintenance-card--about">
+            <h1 class="maintenance-title" id="mm-title"></h1>
+            <p class="maintenance-text" id="mm-about1"></p>
+            <p class="maintenance-text" id="mm-about2"></p>
+
+            <div class="chips" aria-label="Key points">
+              <span class="chip" id="chip1"></span>
+              <span class="chip" id="chip2"></span>
+              <span class="chip" id="chip3"></span>
+              <span class="chip" id="chip4"></span>
+              <span class="chip" id="chip5"></span>
+              <span class="chip" id="chip6"></span>
+            </div>
+
+            <div class="hero-cta hero-cta--full">
+              <a href="https://moyamova.online/"
+                 class="btn btn-primary hero-cta__btn"
+                 data-role="start-trainer"
+                 id="mm-startBtn"></a>
+            </div>
+          </article>
+
+          <!-- 3) Feedback / Beta -->
+          <article class="maintenance-card maintenance-card--alt">
+            <h2 class="maintenance-subtitle-title" id="mm-betaTitle"></h2>
+            <p class="maintenance-text" id="mm-beta1"></p>
+            <p class="maintenance-text" id="mm-beta2"></p>
+
+            <a href="https://invite.viber.com/?g2=AQAitGq4muZQCVW44K1Z4aR%2FP9VDM2%2Bso14cyg3Ec1e7mt%2BTaLbs5S1UdHZCU%2Fy5"
+               class="btn btn-secondary maintenance-cta"
+               id="mm-viber"
+               target="_blank"
+               rel="noopener">
+            </a>
+
+            <p class="maintenance-note" id="mm-betaNote"></p>
+          </article>
+
+          <!-- 4) UI screenshots slider (no arrows, autoplay) -->
+          <article class="maintenance-card maintenance-card--about" aria-label="Скриншоты интерфейса">
+            <div class="mm-slider mm-slider--screens" data-slider="moyamova-screens" data-autoplay="2000">
+              <div class="mm-slider__viewport">
+                <div class="mm-slider__track">
+                  <div class="mm-slider__slide">
+                    <img class="mm-slider__img" src="./img/screen/slider/02-dictionaries.jpeg" alt="Словники за частинами мови та запуск тренування" loading="lazy" />
+                  </div>
+                  <div class="mm-slider__slide">
+                    <img class="mm-slider__img" src="./img/screen/slider/03-trainer-synonyms.jpeg" alt="Тренування слів: вибір перекладу, зірки та синоніми" loading="lazy" />
+                  </div>
+                  <div class="mm-slider__slide">
+                    <img class="mm-slider__img" src="./img/screen/slider/04-articles.jpeg" alt="Тренування артиклів у німецькій (der / die / das)" loading="lazy" />
+                  </div>
+                  <div class="mm-slider__slide">
+                    <img class="mm-slider__img" src="./img/screen/slider/05-stats-main.jpeg" alt="Статистика прогресу за основними частинами мови" loading="lazy" />
+                  </div>
+                  <div class="mm-slider__slide">
+                    <img class="mm-slider__img" src="./img/screen/slider/06-stats-other.jpeg" alt="Статистика прогресу за іншими частинами мови" loading="lazy" />
+                  </div>
+                  <div class="mm-slider__slide">
+                    <img class="mm-slider__img" src="./img/screen/slider/08-dark-mode.jpeg" alt="Темна тема інтерфейсу" loading="lazy" />
+                  </div>
+                  <div class="mm-slider__slide">
+                    <img class="mm-slider__img" src="./img/screen/slider/07-english.jpeg" alt="Тренування англійських слів із прикладами" loading="lazy" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="mm-slider__dots" aria-label="Перемикач слайдів"></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner footer-inner--stack">
+      <p class="footer-copy">© <span id="year"></span> MOYAMOVA</p>
+
+      <nav class="footer-links" aria-label="Legal">
+        <a class="footer-link" id="footer-privacy" href="#"></a>
+        <span class="footer-sep"> | </span>
+        <a class="footer-link" id="footer-terms" href="#"></a>
+        <span class="footer-sep"> | </span>
+        <a class="footer-link" id="footer-impressum" href="#"></a>
+        <span class="footer-sep"> | </span>
+        <a class="footer-link" id="footer-support" href="#"></a>
+      </nav>
+
+      <p class="footer-note" id="mm-analyticsNote"></p>
+    </div>
+  </footer>
+
+  <script src="./js/slider.js"></script>
+
   <script>
-    (function(){
-      try {
-        var lang = (navigator.language || 'ru').toLowerCase().slice(0,2);
-        if (lang === 'uk') location.replace('./uk/');
-        else if (lang === 'en') location.replace('./en/');
-        else location.replace('./ru/');
-      } catch(e) { location.replace('./ru/'); }
+    (function () {
+      const LANG_STORAGE_KEY = 'MOYAMOVA_lang';
+      const VIBER_URL = 'https://invite.viber.com/?g2=AQAitGq4muZQCVW44K1Z4aR%2FP9VDM2%2Bso14cyg3Ec1e7mt%2BTaLbs5S1UdHZCU%2Fy5';
+
+      const messages = {
+        ru: {
+          title: 'MOYAMOVA — тренажёр иностранных слов',
+          about1: 'MOYAMOVA — многоязыковой тренажёр для запоминания слов. Сейчас доступны тренировки по немецкому и английскому на основе словарей: 2500+ слов для каждого языка.',
+          about2: 'Приложение бесплатное, без рекламы и без регистрации. Работает офлайн, а прогресс хранится только на вашем устройстве. Проект развивается постепенно — обратная связь помогает улучшать тренировки и словари.',
+          shotLightCap: 'Светлая тема',
+          shotDarkCap: 'Тёмная тема',
+          shotLightCap: 'Світла тема',
+          shotDarkCap: 'Темна тема',
+          chips: ['DE / EN', '2500+ слов/язык', 'Офлайн', 'Бесплатно', 'Без рекламы', 'Данные на устройстве'],
+
+          startTitle: 'Запустить тренажёр',
+          startText: 'Приложение находится в ранней версии: словари, упражнения и интерфейс постепенно дорабатываются. Оно полностью бесплатное, без рекламы, без регистрации и работает офлайн.',
+          startBtn: 'Запустить тренажёр',
+          startNote: 'Если окно не открылось, проверьте блокировщик всплывающих окон или попробуйте другой браузер. Его можно добавить на главный экран телефона и пользоваться как обычным приложением.',
+
+          betaTitle: 'Поддержка и закрытый бета‑тест',
+          beta1: 'Если вы готовы помочь проекту, буду благодарен за короткую обратную связь: что удобно, что мешает, где встречаются ошибки в словарях и какие тренировки стоит добавить.',
+          beta2: 'Для обсуждений и поддержки есть Viber‑группа. Там же проходит закрытый бета‑тест перед релизом в маркет.',
+          viberBtn: 'Вступить в Viber‑группу',
+          betaNote: 'Ссылка откроется в Viber.',
+
+          footerPrivacy: 'Политика конфиденциальности',
+          footerTerms: 'Условия использования',
+          footerImpressum: 'Импрессум',
+          footerSupport: '',
+
+          metaTitle: 'MOYAMOVA — офлайн-тренажёр слов: немецкий и английский без рекламы',
+          metaDescription: 'Многоязыковой офлайн-тренажёр слов: немецкий и английский. 2500+ слов для каждого языка, без регистрации и рекламы. Данные хранятся на устройстве.',
+          ogTitle: 'MOYAMOVA — офлайн-тренажёр слов',
+          ogDescription: 'Немецкий и английский • 2500+ слов на язык • офлайн • бесплатно • без рекламы',
+          analyticsNote: 'Аналитика посещений на лендинге собирается по умолчанию. В приложении аналитика включается только после согласия.',
+          jsonLd: null,
+
+
+          htmlLang: 'ru',
+          legalSuffix: 'ru'
+        },
+        uk: {
+          title: 'MOYAMOVA — тренажер іноземних слів',
+          about1: 'MOYAMOVA — багатомовний тренажер для запам’ятовування слів. Зараз доступні тренування з німецької та англійської: 2500+ слів для кожної мови.',
+          about2: 'Застосунок безкоштовний, без реклами та без реєстрації. Працює офлайн, а прогрес зберігається лише на вашому пристрої. Проєкт розвивається поступово — ваш фідбек допомагає покращувати тренування й словники.',
+          chips: ['DE / EN', '2500+ слів/мова', 'Офлайн', 'Безкоштовно', 'Без реклами', 'Дані на пристрої'],
+
+          startTitle: 'Запустити тренажер',
+          startText: 'Застосунок у ранній версії: словники, вправи та інтерфейс поступово допрацьовуються. Він повністю безкоштовний, без реклами, без реєстрації та працює офлайн.',
+          startBtn: 'Запустити тренажер',
+          startNote: 'Якщо вікно не відкрилось, перевірте блокування спливаючих вікон або спробуйте інший браузер. Його можна додати на головний екран телефону та користуватися як звичайним застосунком.',
+
+          betaTitle: 'Підтримка та закритий бета‑тест',
+          beta1: 'Якщо ви готові допомогти проєкту, буду вдячний за короткий фідбек: що зручно, що заважає, де трапляються помилки у словниках і які тренування варто додати.',
+          beta2: 'Для обговорення та підтримки є Viber‑група. Там же проходить закритий бета‑тест перед релізом у маркет.',
+          viberBtn: 'Приєднатися у Viber',
+          betaNote: 'Посилання відкриється у Viber.',
+
+          footerPrivacy: 'Політика конфіденційності',
+          footerTerms: 'Умови використання',
+          footerImpressum: 'Імпресум',
+          footerSupport: '',
+
+          metaTitle: 'MOYAMOVA — офлайн-тренажер слів: німецька та англійська без реклами',
+          metaDescription: 'Багатомовний офлайн-тренажер слів: німецька та англійська. 2500+ слів для кожної мови, без реєстрації та реклами. Дані зберігаються на пристрої.',
+          ogTitle: 'MOYAMOVA — офлайн-тренажер слів',
+          ogDescription: 'Німецька та англійська • 2500+ слів/мова • офлайн • безкоштовно • без реклами',
+          analyticsNote: 'Аналітика відвідувань лендингу збирається за замовчуванням. У застосунку аналітика вмикається лише після згоди.',
+          jsonLd: null,
+
+
+          htmlLang: 'uk',
+          legalSuffix: 'uk'
+        }
+        ,en: {
+          title: 'MOYAMOVA — vocabulary trainer',
+          about1: 'MOYAMOVA is a multilingual vocabulary trainer. Practice German and English with 2500+ words per language.',
+          about2: 'Free, offline, no ads and no registration. Your progress is stored on your device only. The project evolves step by step — feedback helps improve dictionaries and exercises.',
+          chips: ['DE / EN', '2500+ words/language', 'Offline', 'Free', 'No ads', 'On-device data'],
+
+          startTitle: 'Start the trainer',
+          startText: 'The app is in an early version: dictionaries, exercises and UI are being improved. It is free, ad‑free, works offline and does not require an account.',
+          startBtn: 'Start the trainer',
+          startNote: 'If the window did not open, check your pop‑up blocker or try another browser. You can add it to your home screen and use it like an app.',
+
+          betaTitle: 'Support & closed beta',
+          beta1: 'If you are ready to help, I would appreciate short feedback: what works well, what is confusing, and where you notice dictionary issues.',
+          beta2: 'There is a Viber group for discussions and support. A closed beta test runs there before the store release.',
+          viberBtn: 'Join the Viber group',
+          betaNote: 'The link will open in Viber.',
+
+          footerPrivacy: 'Privacy Policy',
+          footerTerms: 'Terms of Use',
+          footerImpressum: 'Impressum',
+          footerSupport: '',
+
+          metaTitle: 'MOYAMOVA — Offline Vocabulary Trainer for German & English',
+          metaDescription: 'Multilingual offline vocabulary trainer for German and English. 2500+ words per language. No ads, no accounts. Your learning progress stays on your device.',
+          ogTitle: 'MOYAMOVA — Offline Vocabulary Trainer',
+          ogDescription: 'German & English • 2500+ words per language • offline • free • no ads',
+
+          analyticsNote: 'Analytics on this landing page is collected by default. In the app, analytics is enabled only with your consent.',
+          jsonLd: null,
+          htmlLang: 'en',
+          legalSuffix: 'en'
+        }
+      };
+
+      function detectInitialLang() {
+        try {
+          const stored = localStorage.getItem(LANG_STORAGE_KEY);
+          if (stored && messages[stored]) return stored;
+        } catch (e) {}
+
+        const navLang = (navigator.language || (navigator.languages && navigator.languages[0]) || 'ru')
+          .toLowerCase()
+          .slice(0, 2);
+
+        if (navLang === 'uk') return 'uk';
+        if (navLang === 'en') return 'en';
+        return 'ru';
+      }
+
+      function applyLang(lang) {
+        const dict = messages[lang] || messages.ru;
+        document.getElementById('mm-title').textContent = dict.title;
+        document.getElementById('mm-about1').textContent = dict.about1;
+        document.getElementById('mm-about2').textContent = dict.about2;
+
+        // hero poster (per language)
+        const heroPoster = document.getElementById('mm-heroPoster');
+        if (heroPoster) {
+          heroPoster.src = (lang === 'uk') ? './img/hero/poster-uk.jpeg' : './img/hero/poster-ru.jpeg';
+          heroPoster.alt = dict.title;
+        }
+
+        const chipIds = ['chip1','chip2','chip3','chip4','chip5','chip6'];
+        chipIds.forEach((id, idx) => {
+          const el = document.getElementById(id);
+          if (el) el.textContent = dict.chips[idx] || '';
+        });
+
+        document.getElementById('mm-betaTitle').textContent = dict.betaTitle;
+        document.getElementById('mm-beta1').textContent = dict.beta1;
+        document.getElementById('mm-beta2').textContent = dict.beta2;
+        const viberEl = document.getElementById('mm-viber');
+        viberEl.textContent = dict.viberBtn;
+        viberEl.href = VIBER_URL;
+        document.getElementById('mm-betaNote').textContent = dict.betaNote;
+
+        // start CTA (button)
+        document.getElementById('mm-startBtn').textContent = dict.startBtn;
+
+        // footer legal links
+        const privacy = document.getElementById('footer-privacy');
+        const terms = document.getElementById('footer-terms');
+        const impressum = document.getElementById('footer-impressum');
+        const support = document.getElementById('footer-support');
+
+        privacy.textContent = dict.footerPrivacy;
+        terms.textContent = dict.footerTerms;
+        impressum.textContent = dict.footerImpressum;
+        if (support) support.textContent = dict.footerSupport;
+
+        privacy.href = './legal/privacy.' + dict.legalSuffix + '.html';
+        terms.href = './legal/terms.' + dict.legalSuffix + '.html';
+        impressum.href = './legal/impressum.' + dict.legalSuffix + '.html';
+        if (support) support.href = VIBER_URL;
+        document.documentElement.lang = dict.htmlLang;
+
+        const note = document.getElementById('mm-analyticsNote');
+        if (note) note.textContent = dict.analyticsNote || '';
+
+        const jsonldEl = document.getElementById('mm-jsonld');
+        if (jsonldEl) {
+          const obj = (dict.htmlLang === 'ru') ? {"@context":"https://schema.org","@type":"SoftwareApplication","name":"MOYAMOVA","applicationCategory":"EducationalApplication","operatingSystem":"Web","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Многоязыковой офлайн-тренажёр слов для немецкого и английского. 2500+ слов для каждого языка, без рекламы и регистрации.","inLanguage":"ru","availableLanguage":["de","en"],"url":"https://moyamova.com/"} : (dict.htmlLang === 'uk') ? {"@context":"https://schema.org","@type":"SoftwareApplication","name":"MOYAMOVA","applicationCategory":"EducationalApplication","operatingSystem":"Web","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Багатомовний офлайн-тренажер слів для німецької та англійської. 2500+ слів для кожної мови, без реклами та реєстрації.","inLanguage":"uk","availableLanguage":["de","en"],"url":"https://moyamova.com/"} : {"@context":"https://schema.org","@type":"SoftwareApplication","name":"MOYAMOVA","applicationCategory":"EducationalApplication","operatingSystem":"Web","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Multilingual offline vocabulary trainer for German and English. 2500+ words per language. No ads, no accounts. Data stays on your device.","inLanguage":"en","availableLanguage":["de","en"],"url":"https://moyamova.com/"};
+          jsonldEl.textContent = JSON.stringify(obj);
+        }
+
+        // SEO/meta
+        document.title = dict.metaTitle || document.title;
+
+        const md = document.getElementById('meta-description');
+        if (md && dict.metaDescription) md.setAttribute('content', dict.metaDescription);
+
+        const ogTitle = document.getElementById('meta-og-title');
+        if (ogTitle && dict.ogTitle) ogTitle.setAttribute('content', dict.ogTitle);
+
+        const ogDesc = document.getElementById('meta-og-description');
+        if (ogDesc && dict.ogDescription) ogDesc.setAttribute('content', dict.ogDescription);
+
+        const twTitle = document.getElementById('meta-twitter-title');
+        if (twTitle && dict.ogTitle) twTitle.setAttribute('content', dict.ogTitle);
+
+        const twDesc = document.getElementById('meta-twitter-description');
+        if (twDesc && dict.ogDescription) twDesc.setAttribute('content', dict.ogDescription);
+const buttons = document.querySelectorAll('.lang-btn');
+        buttons.forEach(function (btn) {
+          btn.classList.toggle('is-active', btn.getAttribute('data-lang') === lang);
+        });
+      }
+
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      let currentLang = detectInitialLang();
+      applyLang(currentLang);
+
+      const langSwitch = document.querySelector('.lang-switch');
+      if (langSwitch) {
+        langSwitch.addEventListener('click', function (e) {
+          const btn = e.target.closest('.lang-btn');
+          if (!btn) return;
+          const lang = btn.getAttribute('data-lang');
+          if (!lang || !(lang in messages)) return;
+          try { localStorage.setItem(LANG_STORAGE_KEY, lang); } catch (e) {}
+          currentLang = lang;
+          applyLang(currentLang);
+        });
+      }
+
+      // start trainer: poster click + button click (same behaviour)
+      function openTrainer(targetUrl) {
+        const isMobile =
+          /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
+          window.innerWidth < 768;
+
+        if (isMobile) {
+          window.location.href = targetUrl;
+          return;
+        }
+
+        const w = 430;
+        const h = 800;
+        const left = Math.round(window.screenX + (window.innerWidth - w) / 2);
+        const top = Math.round(window.screenY + (window.innerHeight - h) / 2);
+
+        window.open(
+          targetUrl,
+          'MOYAMOVATrainer',
+          'width=' +
+            w +
+            ',height=' +
+            h +
+            ',left=' +
+            left +
+            ',top=' +
+            top +
+            ',resizable=yes,scrollbars=yes,status=no'
+        );
+      }
+
+      document.querySelectorAll('[data-role="start-trainer"]').forEach((el) => {
+        el.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetUrl = el.getAttribute('href') || 'https://moyamova.online/';
+          openTrainer(targetUrl);
+        });
+      });
     })();
   </script>
-</head>
-<body>
-  <p><a href="./ru/">Open MOYAMOVA</a></p>
 </body>
 </html>
