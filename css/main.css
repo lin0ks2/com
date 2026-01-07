@@ -214,8 +214,132 @@ main {
   display: grid;
   grid-template-columns: 1fr;
   gap: 18px;
-  max-width: 720px;
+  max-width: 980px;
   margin: 0 auto;
+}
+
+/* ===== About block: 2-column layout with slider ===== */
+.maintenance-card--about {
+  padding: 22px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .about-grid {
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 22px;
+  }
+}
+
+.about-content .maintenance-title,
+.about-content .maintenance-subtitle-title {
+  text-align: left;
+}
+
+.about-content .chips {
+  justify-content: flex-start;
+}
+
+/* Slider */
+.mm-slider {
+  position: relative;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.45);
+}
+
+.mm-slider__viewport {
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.mm-slider__track {
+  display: flex;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+.mm-slider__slide {
+  min-width: 100%;
+}
+
+.mm-slider__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.mm-slider__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(7, 8, 22, 0.55);
+  color: rgba(244, 245, 255, 0.95);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  z-index: 2;
+}
+
+.mm-slider__btn:hover {
+  filter: brightness(1.08);
+}
+
+.mm-slider__btn--prev {
+  left: 10px;
+}
+
+.mm-slider__btn--next {
+  right: 10px;
+}
+
+.mm-slider__dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  z-index: 2;
+}
+
+.mm-slider__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.18);
+  cursor: pointer;
+  padding: 0;
+}
+
+.mm-slider__dot.is-active {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+@media (max-width: 600px) {
+  .maintenance-card--about {
+    padding: 18px 16px 16px;
+  }
+  .mm-slider__btn {
+    width: 34px;
+    height: 34px;
+  }
 }
 
 /* Keep this in case you later widen layout on desktop */
@@ -443,7 +567,7 @@ body.page {
       display: grid;
       grid-template-columns: 1fr;
       gap: 16px;
-      max-width: 720px;
+      max-width: 980px;
       margin: 0 auto;
     }
 
