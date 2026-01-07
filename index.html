@@ -48,29 +48,65 @@
       <div class="container">
         <div class="placeholder-stack">
           <!-- Block 1: About -->
-          <article class="maintenance-card">            <h1 class="maintenance-title" id="mm-title"></h1>
-            <p class="maintenance-text" id="mm-about1"></p>
-            <p class="maintenance-text" id="mm-about2"></p>
+          <article class="maintenance-card maintenance-card--about">
+            <div class="about-grid">
+              <div class="about-media" aria-label="Скриншоты приложения">
+                <div class="mm-slider" data-slider="moyamova">
+                  <div class="mm-slider__viewport">
+                    <div class="mm-slider__track">
+  <div class="mm-slider__slide">
+    <img class="mm-slider__img" src="./img/screen/slider/01-poster.jpeg" alt="MOYAMOVA — вчи німецьку легко або англійську (постер)" loading="lazy" />
+  </div>
+  <div class="mm-slider__slide">
+    <img class="mm-slider__img" src="./img/screen/slider/03-trainer-synonyms.jpeg" alt="Тренування слів: вибір перекладу, зірки та синоніми" loading="lazy" />
+  </div>
+  <div class="mm-slider__slide">
+    <img class="mm-slider__img" src="./img/screen/slider/04-articles.jpeg" alt="Тренування артиклів у німецькій (der / die / das)" loading="lazy" />
+  </div>
+  <div class="mm-slider__slide">
+    <img class="mm-slider__img" src="./img/screen/slider/02-dictionaries.jpeg" alt="Словники за частинами мови та запуск тренування" loading="lazy" />
+  </div>
+  <div class="mm-slider__slide">
+    <img class="mm-slider__img" src="./img/screen/slider/05-stats-main.jpeg" alt="Статистика прогресу за основними частинами мови" loading="lazy" />
+  </div>
+  <div class="mm-slider__slide">
+    <img class="mm-slider__img" src="./img/screen/slider/06-stats-other.jpeg" alt="Статистика прогресу за іншими частинами мови" loading="lazy" />
+  </div>
+  <div class="mm-slider__slide">
+    <img class="mm-slider__img" src="./img/screen/slider/07-english.jpeg" alt="Тренування англійських слів із прикладами" loading="lazy" />
+  </div>
+  <div class="mm-slider__slide">
+    <img class="mm-slider__img" src="./img/screen/slider/08-dark-mode.jpeg" alt="Темна тема інтерфейсу" loading="lazy" />
+  </div>
+</div></div>
+                    </div>
+                  </div>
 
-            
-            <!--<div class="screenshots" aria-label="Screenshots">
-              <figure class="shot">
-                <img id="mm-shot-light" class="shot-img" src="./img/screens/ru-light.jpeg" alt="Скриншот (светлая тема)" loading="lazy" />
-                <figcaption class="shot-cap" id="mm-shot-light-cap"></figcaption>
-              </figure>
-              <figure class="shot">
-                <img id="mm-shot-dark" class="shot-img" src="./img/screens/ru-dark.jpeg" alt="Скриншот (тёмная тема)" loading="lazy" />
-                <figcaption class="shot-cap" id="mm-shot-dark-cap"></figcaption>
-              </figure>
-            </div> -->
+                  <button class="mm-slider__btn mm-slider__btn--prev" type="button" aria-label="Попередній слайд">
+                    <span aria-hidden="true">‹</span>
+                  </button>
+                  <button class="mm-slider__btn mm-slider__btn--next" type="button" aria-label="Наступний слайд">
+                    <span aria-hidden="true">›</span>
+                  </button>
 
-            <div class="chips" aria-label="Key points">
-              <span class="chip" id="chip1"></span>
-              <span class="chip" id="chip2"></span>
-              <span class="chip" id="chip3"></span>
-              <span class="chip" id="chip4"></span>
-              <span class="chip" id="chip5"></span>
-              <span class="chip" id="chip6"></span>
+                  <div class="mm-slider__dots" aria-label="Перемикач слайдів"></div>
+                </div>
+              </div>
+
+              <div class="about-content">
+                <h1 class="maintenance-title" id="mm-title"></h1>
+                <p class="maintenance-text" id="mm-about1"></p>
+                <p class="maintenance-text" id="mm-about2"></p>
+
+                <div class="chips" aria-label="Key points">
+                  <span class="chip" id="chip1"></span>
+                  <span class="chip" id="chip2"></span>
+                  <span class="chip" id="chip3"></span>
+                  <span class="chip" id="chip4"></span>
+                  <span class="chip" id="chip5"></span>
+                  <span class="chip" id="chip6"></span>
+                </div>
+              </div>
             </div>
           </article>
 
@@ -123,6 +159,8 @@
       </nav>
     </div>
   </footer>
+
+  <script src="./js/slider.js"></script>
 
   <script>
     (function () {
