@@ -191,6 +191,8 @@ main {
   padding: 4px 8px;
   border-radius: 999px;
   cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .lang-btn.is-active {
